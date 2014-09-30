@@ -1,0 +1,9 @@
+--index-url https://pypi.python.org/simple/
+
+-e .
+
+-r test_requirements.txt
+Fabric
+Sphinx
+django-debug-toolbar
+bpython

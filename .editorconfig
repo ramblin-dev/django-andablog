@@ -1,0 +1,26 @@
+# http://editorconfig.org
+
+root = true
+
+[*]
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+end_of_line = lf
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.js]
+indent_style = tab
+
+[lib/**.js]
+indent_style = space
+indent_size = 2
+
+[LICENSE]
+insert_final_newline = false
+
+[Makefile]
+indent_style = tab
