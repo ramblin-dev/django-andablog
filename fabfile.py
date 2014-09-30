@@ -8,7 +8,7 @@ VIRTUALENV = os.path.join(ROOT, 'venv')
 PYTHON = os.path.join(VIRTUALENV, 'bin/python')
 PIP = os.path.join(VIRTUALENV, 'bin/pip')
 LOCAL_REQUIREMENTS = os.path.join(ROOT, 'local_requirements.txt')
-DEMO_MANAGE_PY = os.path.join(ROOT, 'demo/demo/manage.py')
+DEMO_MANAGE_PY = os.path.join(ROOT, 'demo/manage.py')
 
 
 def pip(str_args):

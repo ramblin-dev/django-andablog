@@ -58,3 +58,6 @@ venv
 
 # Pycharm
 .idea
+
+# Demo project
+db.sqlite3

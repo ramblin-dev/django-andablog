@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block subtitle %}Home{% endblock %}
+
+{% block content %}
+    <h2>Here are my custom users!</h2>
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Fears</th>
+        </tr>
+        {% for custom_user in custom_users %}
+        <tr>
+            <td>{{ custom_user.name }}</td>
+            <td>{{ custom_user.address }}</td>
+            <td>{{ custom_user.fears }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
