@@ -32,4 +32,4 @@ django-andablog is intended to address #2 while __fully__ supporting Django 1.6 
 These features are [right out](https://www.youtube.com/watch?feature=player_detailpage&v=xOrgLj9lOwk#t=108). If you are looking for one of them, andablog is not for you.
 * Providing a pre-packaged User model. You must supply a relation string for andablog to consider the author.
 * User/Author Profile pages. These are implemented by the site and linked to by andablog.
-* As such the site's user model must implement get_short_name for author display and get_absolute_url for author profile linking.
+* Constructing the author display name or URL. As such the site's user model must implement get_short_name for author display and get_absolute_url for author profile linking.
