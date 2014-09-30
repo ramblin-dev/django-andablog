@@ -13,6 +13,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'Django',
+    'South',  # For 1.6.6 compatibility
 ]
 
 test_requirements = [

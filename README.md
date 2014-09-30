@@ -10,7 +10,7 @@ At the time of andablog's creation, most Django blog apps (not CMS frameworks) w
 2. Embedded within an existing site with the app's URL hierarchy starting at a custom location, like '/blog'.
 3. Support for both but with a default configuration providing #1 or #2 (usually #1) working out of the box.
 
-django-andablog is intended to address #2 while __fully__ supporting Django 1.6 and above.
+django-andablog is intended to address #2 while __fully__ supporting the current Django release and one back.
 
 ### Features
 ***NOTE: This project just got started so these are all just promises.***
@@ -21,11 +21,12 @@ django-andablog is intended to address #2 while __fully__ supporting Django 1.6 
 * A Django sitemaps EntrySitemap class
 * A base class for an entries feed
 * Utilizing a site-provided profile page as the author profile page.
-* Full 1.6 and 1.7 support
+* Python2.7 and 3 support
+* Full support for current and 1 previous Django release E.g. For 1.6 and 1.7
  * Custom User Models
- * South Migrations (for 1.6)
- * Django Migrations (for 1.7)
-* Support for official (not beta or candidate) Django releases is prioritized over new features as to not hold a site's upgrade back.
+ * South migrations
+ * Django migrations
+* Official (not beta or candidate) Django release tickets are prioritized over new features as to not hold a site's upgrade back.
 * A demo application.
 
 ### Not Features
