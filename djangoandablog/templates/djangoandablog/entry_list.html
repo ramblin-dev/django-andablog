@@ -1,5 +1,20 @@
 {% extends "djangoandablog/base.html" %}
 
+{% block andablog_meta %}
+    <meta name="description" content="Recent blog entries">
+    <meta name="author" content="TODO">
+{% endblock %}
+
 {% block andablog_page_title %}
     Recent Entries
+{% endblock %}
+
+{% block andablog_content %}
+    {% for entry in entries %}
+        <div class="row">
+
+            <div class="col-sm-8 blog-main">
+
+                <div class="blog-post">
+    {% endfor %}
 {% endblock %}
