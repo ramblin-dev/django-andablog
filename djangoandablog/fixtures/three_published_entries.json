@@ -1,0 +1,41 @@
+[
+{
+    "fields": {
+        "title": "Welcome!",
+        "created": "2014-10-11T12:57:03.807Z",
+        "published_timestamp": "2014-10-11T12:57:03.809Z",
+        "modified": "2014-10-11T12:57:03.810Z",
+        "content": "Hi, with this blog I intend to share my personal details and those of my friends. Sign up if you would like your personal details divulged as well.",
+        "slug": "welcome",
+        "is_published": true
+    },
+    "model": "djangoandablog.entry",
+    "pk": 2
+},
+{
+    "fields": {
+        "title": "Busy busy...",
+        "created": "2014-10-11T13:00:48.992Z",
+        "published_timestamp": "2014-10-11T13:00:48.994Z",
+        "modified": "2014-10-11T13:01:16.024Z",
+        "content": "Sorry it has been a long time since my last post. I have been really busy watching TV, playing video games and drinking beer.",
+        "slug": "busy-busy",
+        "is_published": true
+    },
+    "model": "djangoandablog.entry",
+    "pk": 1
+},
+{
+    "fields": {
+        "title": "Last post",
+        "created": "2014-10-11T13:14:15.201Z",
+        "published_timestamp": "2014-10-11T13:14:15.204Z",
+        "modified": "2014-10-11T13:14:15.205Z",
+        "content": "Hey everyone, I have recently received a heart felt letter from a Nigerian prince. The letter contained a plea for monetary help in claiming his late father's throne from his estranged brother. Included was a promise that I will receive a large amount of money in thanks once the throne is secure. Not only did I immediately send him the required funds but I have also decided to liquidate my assets in order to travel to Nigeria so that I may personally assist with the succession.\r\n\r\nAs a result, I fear I won't have time for this blog any more. I wish you all the best of luck. ",
+        "slug": "last-post",
+        "is_published": true
+    },
+    "model": "djangoandablog.entry",
+    "pk": 3
+}
+]

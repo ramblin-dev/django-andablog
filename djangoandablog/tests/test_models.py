@@ -3,6 +3,7 @@
 
 from django.test import TestCase
 from django.utils.text import slugify
+from django.utils import timezone
 
 from djangoandablog import models
 
@@ -33,3 +34,15 @@ class TestEntryModel(TestCase):
 
         self.assertNotEqual(self.entry.slug, new_entry_2.slug)
         self.assertIn(self.entry.slug, new_entry_2.slug)
+
+    def test_publishing(self):
+        """Test publishing an entry"""
+        self.assertFalse(self.entry.is_published)
+        self.assertFalse(self.entry.published_timestamp)
+
+        moment_ago = timezone.now()
+
+        self.entry.is_published = True
+        self.entry.save()
+
+        self.assertGreaterEqual(self.entry.published_timestamp, moment_ago)

@@ -13,7 +13,7 @@ class EntryListingTests(TestCase):
     """Posts or not, we just want to make sure we are hooking this up properly"""
 
     def setUp(self):
-        self.url = reverse('andablog.entrylist')
+        self.url = reverse('andablog:entrylist')
 
     def test_rendering(self):
         """The listing should render properly"""

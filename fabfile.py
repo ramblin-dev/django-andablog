@@ -1,6 +1,8 @@
 import os
 
 from fabric.api import local
+from fabric.context_managers import hide
+from fabric.state import output
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -66,3 +68,11 @@ def test():
 def runserver():
     """Runs the demo development server"""
     python('{} runserver'.format(DEMO_MANAGE_PY))
+
+
+def dumpdata(app_target):
+    """Dumps data from an app to a named fixture"""
+    output['status'] = False
+    with hide('running', 'status'):
+        manage_args = 'dumpdata --indent=4 {}'.format(app_target)
+        manage(manage_args)
