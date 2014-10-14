@@ -8,6 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+from django import VERSION as DJANGO_VERSION
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -57,6 +59,11 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'djangoandablog',
 )
+
+if DJANGO_VERSION >= (1, 7):
+    THIRD_PARTY_APPS += ('debug_toolbar.apps.DebugToolbarConfig',)
+else:
+    THIRD_PARTY_APPS += ('debug_toolbar',)
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
