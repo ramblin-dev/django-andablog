@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+# Absolute filesystem path to the top-level project folder:
+SITE_ROOT = os.path.dirname(os.path.join(BASE_DIR, 'demo'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -24,21 +26,46 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+""" TEMPLATE CONFIGURATION """
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.eggs.Loader',
+)
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+TEMPLATE_DIRS = (
+    os.path.normpath(os.path.join(SITE_ROOT, 'templates')),
+    #normpath(join(SITE_ROOT, 'templates', 'bootstrap', 'allauth')),
+)
+
+########## END TEMPLATE CONFIGURATION
+
 ALLOWED_HOSTS = []
 
-
-# Application definition
-
-INSTALLED_APPS = (
+""" APP CONFIGURATION """
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
+
+THIRD_PARTY_APPS = (
     'djangoandablog',
+)
+
+# Apps specific for this project go here.
+LOCAL_APPS = (
     'blog',
 )
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+########## END APP CONFIGURATION
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -76,6 +103,26 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+""" STATIC FILE CONFIGURATION """
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+STATIC_URL = '/static/'
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = (
+    os.path.normpath(os.path.join(SITE_ROOT, 'static')),
+)
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+########## END STATIC FILE CONFIGURATION
 
 
 # Static files (CSS, JavaScript, Images)

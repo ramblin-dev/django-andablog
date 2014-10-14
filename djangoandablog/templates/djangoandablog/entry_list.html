@@ -1,20 +1,25 @@
 {% extends "djangoandablog/base.html" %}
 
 {% block andablog_meta %}
-    <meta name="description" content="Recent blog entries">
+    <meta name="description" content="Latest blog entries">
     <meta name="author" content="TODO">
 {% endblock %}
 
 {% block andablog_page_title %}
-    Recent Entries
+    Latest Blog Entries
 {% endblock %}
 
 {% block andablog_content %}
     {% for entry in entries %}
         <div class="row">
-
             <div class="col-sm-8 blog-main">
-
                 <div class="blog-post">
+                    <h2 class="blog-post-title">{{ entry.title }}</h2>
+                    <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% comment %}TODO by <a href="#">Mark</a>{% endcomment %}</p>
+                    {% comment %}TODO: Markdown{% endcomment %}
+                    {{ entry.content }}
+                </div><!-- /.blog-post -->
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}

@@ -46,14 +46,16 @@
         <div class="demo-masthead">
             <div class="container">
                 <nav class="demo-nav">
-                  <a class="demo-nav-item active" href="/">Home</a>
-                  <a class="demo-nav-item" href="/blog">Blog</a>
+                  <a class="demo-nav-item {% block menu-home-class %}{% endblock %}" href="/">Home</a>
+                  <a class="demo-nav-item {% block menu-blog-class %}{% endblock %}" href="/blog">Blog</a>
                 </nav>
             </div>
         </div>
 
         <div class="container">
-            {% block content %}{% endblock %}
+            <p>
+                {% block content %}{% endblock %}
+            </p>
         </div>
 
         <div class="demo-footer">
