@@ -62,7 +62,7 @@ def manage(args):
 
 def test():
     """Runs all tests"""
-    manage('test blog djangoandablog')
+    manage('test common blog djangoandablog')
 
 
 def runserver():
@@ -76,3 +76,8 @@ def dumpdata(app_target):
     with hide('running', 'status'):
         manage_args = 'dumpdata --indent=4 {}'.format(app_target)
         manage(manage_args)
+
+
+def reset_db():
+    """Recreates the development db"""
+    manage('reset_db --noinput')

@@ -57,7 +57,9 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'djangoandablog',
+    'authtools',  # Login using email
+    'djangoandablog',  # The blog engine
+    'django_extensions',  # Misc Tools, we use it for the handy sql reset
 )
 
 if DJANGO_VERSION >= (1, 7):
@@ -67,6 +69,7 @@ else:
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'common',
     'blog',
 )
 
@@ -131,8 +134,5 @@ DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 ########## END STATIC FILE CONFIGURATION
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
+""" CUSTOM USER CONFIGURATION """
+AUTH_USER_MODEL = 'common.User'

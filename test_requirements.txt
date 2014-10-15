@@ -1,3 +1,5 @@
+django-extensions
+django-authtools
 coverage
 coveralls
 mock
