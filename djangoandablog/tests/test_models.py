@@ -9,6 +9,13 @@ from djangoandablog import models
 
 
 class TestEntryModel(TestCase):
+    """
+    Author Note: We don't do much, if any testing, surrounding the Entry author attribute.
+    As all of the integration code for them is in the templates.
+
+    TODO: For 1.7, And-a-Blog should provide a Django system check that ensures that get_short_name and
+    get_absolute_url have been implemented on the user model as that is what the templates rely on.
+    """
 
     def setUp(self):
         self.entry = models.Entry.objects.create(title=u'First post!', content=u'The best post on the internet.')

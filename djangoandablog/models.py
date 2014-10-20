@@ -4,6 +4,7 @@ import time
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
+from django.conf import settings
 
 from model_utils.models import TimeStampedModel
 
@@ -18,6 +19,7 @@ class Entry(TimeStampedModel):
     content = models.TextField()
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=False)
 
     def __str__(self):
         return self.title

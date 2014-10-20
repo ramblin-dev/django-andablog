@@ -1,0 +1,11 @@
+[
+{
+    "fields": {
+        "home": "The Fortress of Solitude",
+        "greatest_fear": "Kryptonite",
+        "user": 4
+    },
+    "model": "profiles.userprofile",
+    "pk": 1
+}
+]

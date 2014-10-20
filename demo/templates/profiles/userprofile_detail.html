@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block subtitle %}{{ profile.user.profile_name }}'s Profile{% endblock %}
+
+{% block content %}
+    <h2>{{ profile.user.profile_name }}'s Profile</h2>
+    <p>Shhh... These details were shared with the strictest confidence.</p>
+    <h3>Greatest Fear</h3>
+    <p>{{ profile.greatest_fear }}</p>
+    <h3>Home</h3>
+    <p>{{ profile.home }}</p>
+{% endblock %}

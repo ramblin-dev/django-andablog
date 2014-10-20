@@ -62,7 +62,7 @@ def manage(args):
 
 def test():
     """Runs all tests"""
-    manage('test common blog djangoandablog')
+    manage('test common profiles blog djangoandablog')
 
 
 def runserver():

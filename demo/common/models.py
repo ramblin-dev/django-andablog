@@ -5,7 +5,7 @@ from django.template.defaultfilters import slugify
 
 
 class User(AbstractEmailUser):
-    name = models.CharField(max_length=100)  # See Also: "Falsehoods programmers believe about names"
+    name = models.CharField(max_length=100)
     profile_name = models.CharField('profile name', max_length=20, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
 

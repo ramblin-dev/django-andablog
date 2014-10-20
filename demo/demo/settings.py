@@ -71,6 +71,7 @@ else:
 LOCAL_APPS = (
     'common',
     'blog',
+    'profiles',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

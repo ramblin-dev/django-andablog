@@ -13,5 +13,6 @@ if DJANGO_VERSION >= (1, 7):
 urlpatterns = patterns('',
     home_url,
     url(r'^blog/', include('blog.urls')),
+    url(r'^profile/', include('profiles.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
