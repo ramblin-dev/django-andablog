@@ -5,9 +5,13 @@
 
 {% block content %}
     <h2>{{ profile.user.profile_name }}'s Profile</h2>
-    <p>Shhh... These details were shared with the strictest confidence.</p>
+    <p>Shhh... These details were shared in confidence. Don't tell anyone.</p>
     <h3>Greatest Fear</h3>
     <p>{{ profile.greatest_fear }}</p>
+    <h3>Real Name</h3>
+    <p>{{ profile.user.name }}</p>
+    <h3>Email</h3>
+    <p>{{ profile.user.email }}</p>
     <h3>Home</h3>
     <p>{{ profile.home }}</p>
 {% endblock %}
