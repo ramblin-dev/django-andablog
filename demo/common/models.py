@@ -23,8 +23,8 @@ class User(AbstractEmailUser):
         return self.profile_name
 
     def get_absolute_url(self):
-        """If provided, And-a-Blog will use this to link to an author's profile"""
-        raise NotImplementedError
+        """Since it's provided And-a-Blog will use this to link to an author's profile"""
+        return self.userprofile.get_absolute_url()
 
     def __unicode__(self):
         return unicode(self.get_short_name())

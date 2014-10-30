@@ -1,0 +1,29 @@
+[
+{
+    "fields": {
+        "home": "The Fortress of Solitude",
+        "greatest_fear": "Kryptonite",
+        "user": 4
+    },
+    "model": "profiles.userprofile",
+    "pk": 1
+},
+{
+    "fields": {
+        "home": "Themyscira",
+        "greatest_fear": "Bound gauntlets",
+        "user": 5
+    },
+    "model": "profiles.userprofile",
+    "pk": 2
+},
+{
+    "fields": {
+        "home": "Decatur, Illinois",
+        "greatest_fear": "Matt Damon",
+        "user": 6
+    },
+    "model": "profiles.userprofile",
+    "pk": 3
+}
+]

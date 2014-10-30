@@ -12,5 +12,5 @@ class EntriesList(ListView):
     paginate_orphans = 5
 
     def get_queryset(self):
-        queryset = super(EntriesList, self).get_queryset()
+        queryset = super(EntriesList, self).get_queryset().filter(is_published=True)
         return queryset.order_by('-published_timestamp')

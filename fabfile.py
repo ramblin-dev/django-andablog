@@ -6,12 +6,13 @@ from fabric.state import output
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+DEMO_ROOT = os.path.join(ROOT, 'demo')
 VIRTUALENV = os.path.join(ROOT, 'venv')
 PYTHON = os.path.join(VIRTUALENV, 'bin/python')
 RUNTESTS_PY = os.path.join(ROOT, 'runtests.py')
 PIP = os.path.join(VIRTUALENV, 'bin/pip')
 LOCAL_REQUIREMENTS = os.path.join(ROOT, 'local_requirements.txt')
-DEMO_MANAGE_PY = os.path.join(ROOT, 'demo/manage.py')
+DEMO_MANAGE_PY = os.path.join(DEMO_ROOT, 'manage.py')
 
 
 def pip(str_args):
@@ -76,6 +77,23 @@ def dumpdata(app_target):
     with hide('running', 'status'):
         manage_args = 'dumpdata --indent=4 {}'.format(app_target)
         manage(manage_args)
+
+
+def recursive_load(search_root):
+    """Finds and loads all fixtures starting with the given root"""
+    for root, dirs, files in os.walk(search_root):
+        dir_name = os.path.basename(root)
+        if dir_name == 'fixtures':
+            fixtures_glob = os.path.join(root, '*.json')
+            command = 'loaddata {}'.format(fixtures_glob)
+            manage(command)
+
+
+def loadalldatas():
+    """Loads all demo fixtures in a safe dependency order."""
+    dependency_order = ['common', 'profiles', 'blog']
+    for app in dependency_order:
+        recursive_load(os.path.join(DEMO_ROOT, app))
 
 
 def reset_db():
