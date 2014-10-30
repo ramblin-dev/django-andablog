@@ -1,0 +1,25 @@
+{% extends "djangoandablog/base.html" %}
+
+{% block andablog_meta %}
+    <meta name="description" content="{{ entry.title }}">
+    <meta name="author" content="{{ entry.author.get_short_name }}">
+{% endblock %}
+
+{% block andablog_page_title %}
+    {{ entry.title }}
+{% endblock %}
+
+{% block andablog_content %}
+    <div class="blog-post">
+        <h2 class="blog-post-title">{{ entry.title }}</h2>
+        <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {% if entry.author.get_absolute_url %}<a href="{{ entry.author.get_absolute_url }}">{{ entry.author.get_short_name }}</a>{% else %}{{ entry.author.get_short_name }}{% endif %}{% endif %}</p>
+        <p>
+            {# TODO: Markdown #}
+            {{ entry.content }}
+        </p>
+        <hr/>
+        <div class="blog-post-comments">
+            TODO: Comments here
+        </div>
+    </div>
+{% endblock %}

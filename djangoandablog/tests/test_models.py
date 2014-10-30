@@ -53,3 +53,14 @@ class TestEntryModel(TestCase):
         self.entry.save()
 
         self.assertGreaterEqual(self.entry.published_timestamp, moment_ago)
+
+    def test_unpublishing(self):
+        """Should be able to pull an entry after it has been published"""
+        self.entry.is_published = True
+        self.entry.save()
+
+        self.entry.is_published = False
+        self.entry.save()
+
+        self.assertFalse(self.entry.is_published)
+        self.assertIsNone(self.entry.published_timestamp)

@@ -16,8 +16,11 @@
                 <div class="blog-post">
                     <h2 class="blog-post-title">{{ entry.title }}</h2>
                     <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {% if entry.author.get_absolute_url %}<a href="{{ entry.author.get_absolute_url }}">{{ entry.author.get_short_name }}</a>{% else %}{{ entry.author.get_short_name }}{% endif %}{% endif %}</p>
-                    {% comment %}TODO: Markdown{% endcomment %}
-                    <p>{{ entry.content }}</p>
+                    <p>
+                        {# TODO: Truncate words, then render markdown #}
+                        {# Truncate derived from: Avg reading speed (3.33 words/s) * Average attention span (8s) #}
+                        {{ entry.content|truncatewords:26 }} <a href="{{ entry.get_absolute_url }}">(More...)</a>
+                    </p>
                 </div><!-- /.blog-post -->
             </div>
         </div>
