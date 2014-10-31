@@ -87,3 +87,8 @@ h6, .h6 {
 .demo-footer p:last-child {
   margin-bottom: 0;
 }
+
+/* Comments */
+#id_honeypot {
+    display: none;
+}

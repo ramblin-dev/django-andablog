@@ -1,0 +1,35 @@
+{% load comments %}
+{% load bootstrap %}
+
+<hr/>
+
+{% get_comment_count for comment_object as comment_count %}
+{% if comment_count > 0 %}
+    <section id="content-comments">
+        <h3>
+            All Comments ({{ comment_count }})
+        </h3>
+
+        {% render_comment_list for comment_object %}
+    </section>
+{% endif %}
+
+<section id="content-comment">
+    {% if user.is_authenticated %}
+        {% get_comment_form for comment_object as form %}
+        <form action="{% comment_form_target %}" method="POST">
+            {% csrf_token %}
+            {{ form.comment | bootstrap }}
+            {{ form.honeypot }}
+            {{ form.content_type }}
+            {{ form.object_pk }}
+            {{ form.timestamp }}
+            {{ form.security_hash }}
+            <input type="hidden" name="next" value="{% if next_url_name %}{% url next_url_name %}{% else %}{{ request.get_full_path }}{% endif %}" />
+            <input class="btn btn-primary" type="submit" value="Add comment" id="id_submit" />
+        </form>
+    {% else %}
+        Want to comment? Simply <a href="{% url 'account_login' %}?next={{ request.get_full_path }}">login</a> as one of our users superman@example.org, wonderwoman@example.org or our blogger, agent0014@example.org.
+        Let's just say their passwords are secret.
+    {% endif %}
+</section>

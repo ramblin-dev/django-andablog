@@ -39,9 +39,21 @@ TEMPLATE_LOADERS = (
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
 TEMPLATE_DIRS = (
     os.path.normpath(os.path.join(SITE_ROOT, 'templates')),
-    #normpath(join(SITE_ROOT, 'templates', 'bootstrap', 'allauth')),
 )
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request',  # Required for django comment next url and allauth template tags
+    # allauth specific context processors
+    "allauth.account.context_processors.account",
+)
 ########## END TEMPLATE CONFIGURATION
 
 ALLOWED_HOSTS = []
@@ -54,12 +66,17 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # Required for comments and allauth
 )
 
 THIRD_PARTY_APPS = (
-    'authtools',  # Login using email
+    'authtools',  # Custom User classes
+    'allauth',  # Login using email
+    'allauth.account',  # Templates
     'djangoandablog',  # The blog engine
     'django_extensions',  # Misc Tools, we use it for the handy sql reset
+    'django_comments',  # Replacement for Django contrib comments
+    'bootstrapform',  # Required for bootstrap templates
 )
 
 if DJANGO_VERSION >= (1, 7):
@@ -70,8 +87,9 @@ else:
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'common',
-    'blog',
     'profiles',
+    'democomments',
+    'blog',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -85,6 +103,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",  # Needed to login by username in Django admin
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 ROOT_URLCONF = 'demo.urls'
@@ -137,3 +161,22 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 """ CUSTOM USER CONFIGURATION """
 AUTH_USER_MODEL = 'common.User'
+
+""" All Auth """
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USER_MODEL_EMAIL_FIELD = "email"
+ACCOUNT_USER_DISPLAY = lambda user: user.get_short_name()
+ACCOUNT_EMAIL_VERIFICATION = "optional"
+
+# Django Auth
+LOGIN_REDIRECT_URL = '/profile/'
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
+SITE_ID = 1
+
+""" Comments Configuration """
+COMMENTS_APP = 'democomments'

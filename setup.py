@@ -14,7 +14,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = [
     'Django>=1.6',
     'South==1.0',  # For Django 1.6 compatibility
-    'django-model-utils',
+    'django-model-utils>=2.2',
 ]
 
 test_requirements = [
@@ -44,8 +44,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',

@@ -17,9 +17,7 @@
             {# TODO: Markdown #}
             {{ entry.content }}
         </p>
-        <hr/>
-        <div class="blog-post-comments">
-            TODO: Comments here
-        </div>
+
+        {% include "djangoandablog/comments_snippet.html" with comment_object=entry %}
     </div>
 {% endblock %}
