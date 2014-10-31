@@ -1,9 +1,11 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.conf import settings
+from model_utils.models import TimeStampedModel
 
 
-class UserProfile(models.Model):
+class UserProfile(TimeStampedModel):
+
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
     greatest_fear = models.CharField(
         blank=True,
