@@ -3,12 +3,14 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 import django.utils.timezone
+from django.conf import settings
 import model_utils.fields
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -23,9 +25,10 @@ class Migration(migrations.Migration):
                 ('content', models.TextField()),
                 ('is_published', models.BooleanField(default=False)),
                 ('published_timestamp', models.DateTimeField(null=True, editable=False, blank=True)),
+                ('author', models.ForeignKey(editable=False, to=settings.AUTH_USER_MODEL, null=True)),
             ],
             options={
-                'abstract': False,
+                'verbose_name_plural': 'entries',
             },
             bases=(models.Model,),
         ),
