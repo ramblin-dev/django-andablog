@@ -15,14 +15,6 @@
 {% block menu-blog-class %}active{% endblock %}
 
 {% block content %}
-    {% comment %}
-    TODO: Delete if not needed.
-    <div class="andablog-header">
-        <h1 class="andablog-title">{% if andablog_blog_title %}{{ andablog_blog_title }}{% else %}Untitled{% endif %}</h1>
-        <p class="lead andablog-description">{% if andablog_blog_description %}{{ andablog_blog_description }}{% else %}No description given{% endif %}</p>
-    </div>
-    {% endcomment %}
-
     {% block andablog_content %}
     {% endblock %}
 {% endblock %}

@@ -1,4 +1,5 @@
 {% extends "djangoandablog/base.html" %}
+{% load andablog_tags %}
 
 {% block andablog_meta %}
     <meta name="description" content="Latest blog entries">
@@ -15,7 +16,7 @@
             <div class="col-sm-8 blog-main">
                 <div class="blog-post">
                     <h2 class="blog-post-title">{{ entry.title }}</h2>
-                    <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {% if entry.author.get_absolute_url %}<a href="{{ entry.author.get_absolute_url }}">{{ entry.author.get_short_name }}</a>{% else %}{{ entry.author.get_short_name }}{% endif %}{% endif %}</p>
+                    <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {{ entry.author|authordisplay }}{% endif %}</p>
                     <p>
                         {# TODO: Truncate words, then render markdown #}
                         {# Truncate derived from: Avg reading speed (3.33 words/s) * Average attention span (8s) #}

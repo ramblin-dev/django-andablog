@@ -1,4 +1,5 @@
 {% extends "djangoandablog/base.html" %}
+{% load andablog_tags %}
 
 {% block andablog_meta %}
     <meta name="description" content="{{ entry.title }}">
@@ -12,7 +13,7 @@
 {% block andablog_content %}
     <div class="blog-post">
         <h2 class="blog-post-title">{{ entry.title }}</h2>
-        <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {% if entry.author.get_absolute_url %}<a href="{{ entry.author.get_absolute_url }}">{{ entry.author.get_short_name }}</a>{% else %}{{ entry.author.get_short_name }}{% endif %}{% endif %}</p>
+        <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {{ entry.author|authordisplay }}{% endif %}</p>
         <p>
             {# TODO: Markdown #}
             {{ entry.content }}

@@ -1,8 +1,10 @@
+{% load andablog_tags %}
+
 <ul class="media-list">
     {% for comment in comment_list %}
         <li id="c{{ comment.id }}" class="media">
             <div class="media-body">
-                <h4 class="media-heading">{% if comment.user.get_absolute_url %}<a href="{{ comment.user.get_absolute_url }}">{{ comment.user.get_short_name }}</a>{% else %}{{ comment.user.get_short_name }}{% endif %} - {{ comment.submit_date|date:"SHORT_DATETIME_FORMAT" }} (<a href="#c{{ comment.id }}">direct link</a>)</h4>
+                <h4 class="media-heading">{{ comment.user|authordisplay }} - {{ comment.submit_date|date:"SHORT_DATETIME_FORMAT" }} (<a href="#c{{ comment.id }}">direct link</a>)</h4>
 
                 <p>{{ comment.comment }}</p>
             </div>
