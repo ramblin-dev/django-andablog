@@ -10,7 +10,7 @@
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$12000$xEvKElLT3Ys9$DAdBBjkTh8V67Gp7cUYefk0QHJqxHq/ggXi5jlm11Z4=",
-        "email": "superman@example.org",
+        "email": "superman@example.com",
         "profile_name": "Superman",
         "date_joined": "2014-10-15T21:59:58.420Z"
     },

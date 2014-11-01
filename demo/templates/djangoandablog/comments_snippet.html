@@ -29,7 +29,7 @@
             <input class="btn btn-primary" type="submit" value="Add comment" id="id_submit" />
         </form>
     {% else %}
-        Want to comment? Simply <a href="{% url 'account_login' %}?next={{ request.get_full_path }}">login</a> as one of our users superman@example.org, wonderwoman@example.org or our blogger, agent0014@example.org.
+        Want to comment? Simply <a href="{% url 'account_login' %}?next={{ request.get_full_path }}">login</a> as one of our users superman@example.com, wonderwoman@example.com or our blogger, agent0014@example.com.
         Let's just say their passwords are secret.
     {% endif %}
 </section>

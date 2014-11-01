@@ -10,7 +10,7 @@
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$12000$xEvKElLT3Ys9$DAdBBjkTh8V67Gp7cUYefk0QHJqxHq/ggXi5jlm11Z4=",
-        "email": "superman@example.org",
+        "email": "superman@example.com",
         "profile_name": "Superman",
         "date_joined": "2014-10-15T21:59:58.420Z"
     },
@@ -28,7 +28,7 @@
         "groups": [],
         "user_permissions": [],
         "password": "pbkdf2_sha256$12000$DsAiaSyDq2jy$o5riydGwbMMhKk9eiRvLT6BUY4b89fgWcJk1JBy5svE=",
-        "email": "wonderwoman@example.org",
+        "email": "wonderwoman@example.com",
         "profile_name": "Wonder Woman",
         "date_joined": "2014-10-15T22:02:00.492Z"
     },
@@ -50,7 +50,7 @@
             21
         ],
         "password": "pbkdf2_sha256$12000$OaNyUE9FBwbC$93o+uMiPW1/HIdNrkIG8wmvRdWaVr2szInyCBc7O/6g=",
-        "email": "agent0014@example.org",
+        "email": "agent0014@example.com",
         "profile_name": "Agent 0014",
         "date_joined": "2014-10-15T22:12:27.930Z"
     },

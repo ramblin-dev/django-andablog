@@ -13,7 +13,7 @@ class TestCustomUserModel(TestCase):
         self.user = models.User.objects.create(
             name=u'Clark Jerome Kent',
             profile_name=u'Superman',
-            email=u'manofsteel1938@example.org',
+            email=u'manofsteel1938@example.com',
         )
 
     def test_slug_creation(self):
