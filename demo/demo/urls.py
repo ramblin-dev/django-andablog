@@ -27,4 +27,5 @@ urlpatterns = patterns('',
     url(r'^comments/', include('django_comments.urls')),
 
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+    url(r'^markitup/', include('markitup.urls')),
 )

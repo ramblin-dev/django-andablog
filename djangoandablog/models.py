@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 import time
-from django.core.urlresolvers import reverse
 
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.text import slugify
 from django.utils import timezone
 from django.conf import settings
 
+from markitup.fields import MarkupField
 from model_utils.models import TimeStampedModel
 
 
@@ -17,7 +18,7 @@ class Entry(TimeStampedModel):
     """
     title = models.CharField(max_length=500)
     slug = models.SlugField(unique=True, editable=False)
-    content = models.TextField()
+    content = MarkupField()
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=False)

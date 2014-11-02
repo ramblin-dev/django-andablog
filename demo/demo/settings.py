@@ -78,6 +78,7 @@ THIRD_PARTY_APPS = (
     'django_extensions',  # Misc Tools, we use it for the handy sql reset
     'django_comments',  # Replacement for Django contrib comments
     'bootstrapform',  # Required for bootstrap templates
+    'markitup',  # Blog req: For markdown editing
 )
 
 if DJANGO_VERSION >= (1, 7):
@@ -181,3 +182,7 @@ SITE_ID = 1
 
 """ Comments Configuration """
 COMMENTS_APP = 'democomments'
+
+""" Markitup! Settings """
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
+MARKITUP_SET = 'markitup/sets/markdown'

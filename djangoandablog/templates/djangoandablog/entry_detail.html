@@ -15,7 +15,6 @@
         <h2 class="blog-post-title">{{ entry.title }}</h2>
         <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {{ entry.author|authordisplay }}{% endif %}</p>
         <p>
-            {# TODO: Markdown #}
             {{ entry.content }}
         </p>
 

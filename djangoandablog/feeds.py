@@ -1,6 +1,6 @@
 from django.contrib.syndication.views import Feed
 from django.core.urlresolvers import reverse
-from django.template.defaultfilters import truncatewords
+from django.template.defaultfilters import truncatewords_html
 
 from models import Entry
 
@@ -37,8 +37,8 @@ class LatestEntriesFeed(Feed):
         return reverse('andablog:entrylist')
 
     def item_description(self, item):
-        # TODO: Markdown
-        return truncatewords(item.content, 26)
+        # TODO: "Better support for truncating markup" #2
+        return truncatewords_html(item.content, 26)
 
     def item_title(self, item):
         return item.title
