@@ -51,8 +51,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.request',  # Required for django comment next url and allauth template tags
-    # allauth specific context processors
+    'django.core.context_processors.request',  # Required for django comment next url, allauth and bootstrap-pagination
     "allauth.account.context_processors.account",
 )
 ########## END TEMPLATE CONFIGURATION
@@ -80,6 +79,7 @@ THIRD_PARTY_APPS = (
     'django_comments',  # Replacement for Django contrib comments
     'bootstrapform',  # Required for bootstrap templates
     'markitup',  # Blog req: For markdown editing
+    'bootstrap_pagination',  # For created bootstrap compatible html pagers
 )
 
 if DJANGO_VERSION >= (1, 7):

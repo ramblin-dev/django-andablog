@@ -17,6 +17,7 @@ requirements = [
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'pillow>=2.6.1',
+    'django-bootstrap-pagination>=1.5.0',
 ]
 
 test_requirements = [

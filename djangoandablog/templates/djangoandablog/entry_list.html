@@ -1,5 +1,6 @@
 {% extends "djangoandablog/base.html" %}
 {% load andablog_tags %}
+{% load bootstrap_pagination %}
 
 {% block andablog_meta %}
     <meta name="description" content="Latest blog entries">
@@ -13,7 +14,7 @@
 {% block andablog_content %}
     {% for entry in entries %}
         <div class="row">
-            <div class="col-sm-8 blog-main">
+            <div class="col-sm-10 blog-main">
                 <div class="blog-post">
                     <h2 class="blog-post-title">{{ entry.title }}</h2>
                     <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {{ entry.author|authordisplay }}{% endif %}</p>
@@ -26,4 +27,6 @@
             </div>
         </div>
     {% endfor %}
+
+    {% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
 {% endblock %}
