@@ -1,0 +1,8 @@
+{% load comments %}
+
+{% get_comment_count for comment_object as comment_count %}
+{% if comment_count > 0 %}
+    <a href="{{ entry.get_absolute_url }}#comments">({{ comment_count }} comments)</a>
+{% else %}
+    <a href="{{ entry.get_absolute_url }}#comment">(Comment)</a>
+{% endif %}

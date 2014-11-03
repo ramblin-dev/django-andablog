@@ -5,7 +5,7 @@
 
 {% get_comment_count for comment_object as comment_count %}
 {% if comment_count > 0 %}
-    <section id="content-comments">
+    <section id="comments">
         <h3>
             All Comments ({{ comment_count }})
         </h3>
@@ -14,7 +14,7 @@
     </section>
 {% endif %}
 
-<section id="content-comment">
+<section id="comment">
     {% if user.is_authenticated %}
         {% get_comment_form for comment_object as form %}
         <form action="{% comment_form_target %}" method="POST">

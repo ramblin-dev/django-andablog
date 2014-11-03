@@ -20,7 +20,7 @@
                     <p>
                         {# TODO: "Better support for truncating markup" #2 #}
                         {# Truncate derived from: Avg reading speed (3.33 words/s) * Average attention span (8s) #}
-                        {{ entry.content|truncatewords_html:26 }} <a href="{{ entry.get_absolute_url }}">(More...)</a>
+                        {{ entry.content|truncatewords_html:26 }} <a href="{{ entry.get_absolute_url }}">(More...) {% include "djangoandablog/comments_count_snippet.html" with comment_object=entry %}</a>
                     </p>
                 </div><!-- /.blog-post -->
             </div>
