@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django import VERSION as DJANGO_VERSION
 from django.contrib import admin
+from django.conf.urls.static import static
 
 from djangoandablog.sitemaps import EntrySitemap
 
@@ -28,4 +30,10 @@ urlpatterns = patterns('',
 
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r'^markitup/', include('markitup.urls')),
-)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static media hosting in debug mode
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += patterns('',
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )

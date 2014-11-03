@@ -91,7 +91,7 @@ def recursive_load(search_root):
 
 def loadalldatas():
     """Loads all demo fixtures in a safe dependency order."""
-    dependency_order = ['common', 'profiles', 'blog']
+    dependency_order = ['common', 'profiles', 'blog', 'democomments']
     for app in dependency_order:
         recursive_load(os.path.join(DEMO_ROOT, app))
 

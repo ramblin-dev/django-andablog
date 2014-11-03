@@ -16,6 +16,7 @@ requirements = [
     'South==1.0',  # For Django 1.6 compatibility
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
+    'pillow>=2.6.1',
 ]
 
 test_requirements = [

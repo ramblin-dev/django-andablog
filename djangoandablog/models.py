@@ -3,6 +3,7 @@ import time
 
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.template.defaultfilters import truncatechars
 from django.utils.text import slugify
 from django.utils import timezone
 from django.conf import settings
@@ -46,3 +47,21 @@ class Entry(TimeStampedModel):
             self.published_timestamp = None
 
         super(Entry, self).save(*args, **kwargs)
+
+
+class EntryImage(TimeStampedModel):
+    entry = models.ForeignKey(Entry)
+    image = models.ImageField(blank=True, upload_to='andablog/images')
+
+    @property
+    def image_url(self):
+        return self.get_absolute_url()
+
+    def get_absolute_url(self):
+        return self.image.url
+
+    def __unicode__(self):
+        return "{entry} - {image}".format(
+            entry=truncatechars(self.entry, 10),
+            image=truncatechars(self.image.name, 10),
+        )

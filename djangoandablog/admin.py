@@ -1,6 +1,12 @@
 from django.contrib import admin
 
-from .models import Entry
+from .models import Entry, EntryImage
+
+
+class EntryImageInline(admin.TabularInline):
+    model = EntryImage
+    extra = 1
+    readonly_fields = ['image_url']
 
 
 class EntryAdmin(admin.ModelAdmin):
@@ -19,4 +25,13 @@ class EntryAdmin(admin.ModelAdmin):
         'published_timestamp',
     )
 
+    inlines = [
+        EntryImageInline,
+    ]
+
+
+class EntryImageAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(Entry, EntryAdmin)
+admin.site.register(EntryImage, EntryImageAdmin)

@@ -7,6 +7,7 @@ https://docs.djangoproject.com/en/1.6/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
+from os.path import normpath, join
 
 from django import VERSION as DJANGO_VERSION
 
@@ -140,6 +141,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+""" MEDIA CONFIGURATION """
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+MEDIA_ROOT = normpath(join(SITE_ROOT, 'media'))
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+MEDIA_URL = '/media/'
+########## END MEDIA CONFIGURATION
 
 """ STATIC FILE CONFIGURATION """
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url

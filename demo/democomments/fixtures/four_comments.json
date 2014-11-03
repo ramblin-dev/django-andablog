@@ -1,0 +1,74 @@
+[
+{
+    "fields": {
+        "comment": "Great Krypton!",
+        "user_url": "",
+        "submit_date": "2014-11-03T21:48:03.582Z",
+        "ip_address": "127.0.0.1",
+        "object_pk": "2",
+        "site": 1,
+        "is_removed": false,
+        "user": 4,
+        "content_type": 13,
+        "is_public": true,
+        "user_name": "Clark Jerome Kent",
+        "user_email": "superman@example.com"
+    },
+    "model": "django_comments.comment",
+    "pk": 1
+},
+{
+    "fields": {
+        "comment": "Truth, Justice and the American Way.",
+        "user_url": "",
+        "submit_date": "2014-11-03T21:48:50.645Z",
+        "ip_address": "127.0.0.1",
+        "object_pk": "1",
+        "site": 1,
+        "is_removed": false,
+        "user": 4,
+        "content_type": 13,
+        "is_public": true,
+        "user_name": "Clark Jerome Kent",
+        "user_email": "superman@example.com"
+    },
+    "model": "django_comments.comment",
+    "pk": 2
+},
+{
+    "fields": {
+        "comment": "I am Diana, princess of the Amazons.",
+        "user_url": "",
+        "submit_date": "2014-11-03T21:49:44.333Z",
+        "ip_address": "127.0.0.1",
+        "object_pk": "2",
+        "site": 1,
+        "is_removed": false,
+        "user": 5,
+        "content_type": 13,
+        "is_public": true,
+        "user_name": "Diana Prince",
+        "user_email": "wonderwoman@example.com"
+    },
+    "model": "django_comments.comment",
+    "pk": 3
+},
+{
+    "fields": {
+        "comment": "Merciful Minerva.",
+        "user_url": "",
+        "submit_date": "2014-11-03T21:51:16.084Z",
+        "ip_address": "127.0.0.1",
+        "object_pk": "1",
+        "site": 1,
+        "is_removed": false,
+        "user": 5,
+        "content_type": 13,
+        "is_public": true,
+        "user_name": "Diana Prince",
+        "user_email": "wonderwoman@example.com"
+    },
+    "model": "django_comments.comment",
+    "pk": 4
+}
+]
