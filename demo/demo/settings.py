@@ -80,6 +80,7 @@ THIRD_PARTY_APPS = (
     'bootstrapform',  # Required for bootstrap templates
     'markitup',  # Blog req: For markdown editing
     'bootstrap_pagination',  # For created bootstrap compatible html pagers
+    'django_nose',
 )
 
 if DJANGO_VERSION >= (1, 7):
@@ -195,3 +196,6 @@ COMMENTS_APP = 'democomments'
 """ Markitup! Settings """
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
 MARKITUP_SET = 'markitup/sets/markdown'
+
+""" Test Settings """
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'

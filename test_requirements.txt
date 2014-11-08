@@ -1,13 +1,8 @@
+fabric
 django-extensions
 django-authtools
 django-allauth
 django-bootstrap-form
-django-bootstrap-pagination
 git+git://github.com/django/django-contrib-comments.git
-coverage
-coveralls
-mock
 nose
 django-nose
-flake8
-tox

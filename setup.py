@@ -21,7 +21,7 @@ requirements = [
 ]
 
 test_requirements = [
-    # None, these go into a requirements file
+    # None, these go into the test_requirements file
 ]
 
 setup(
@@ -48,8 +48,6 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
     test_suite='tests',

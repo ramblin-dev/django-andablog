@@ -1,7 +1,7 @@
 import os
 
 from fabric.api import local
-from fabric.context_managers import hide
+from fabric.context_managers import hide, lcd
 from fabric.state import output
 
 
@@ -9,7 +9,6 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DEMO_ROOT = os.path.join(ROOT, 'demo')
 VIRTUALENV = os.path.join(ROOT, 'venv')
 PYTHON = os.path.join(VIRTUALENV, 'bin/python')
-RUNTESTS_PY = os.path.join(ROOT, 'runtests.py')
 PIP = os.path.join(VIRTUALENV, 'bin/pip')
 LOCAL_REQUIREMENTS = os.path.join(ROOT, 'local_requirements.txt')
 DEMO_MANAGE_PY = os.path.join(DEMO_ROOT, 'manage.py')
@@ -63,7 +62,11 @@ def manage(args):
 
 def test():
     """Runs all tests"""
-    manage('test common profiles blog djangoandablog')
+    with lcd(DEMO_ROOT):
+        print('Andablog tests')
+        manage('test djangoandablog')
+        print('Demo tests')
+        manage('test')
 
 
 def runserver():
