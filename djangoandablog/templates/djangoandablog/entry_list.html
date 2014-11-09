@@ -1,6 +1,5 @@
 {% extends "djangoandablog/base.html" %}
 {% load andablog_tags %}
-{% load bootstrap_pagination %}
 
 {% block andablog_meta %}
     <meta name="description" content="Latest blog entries">
@@ -28,5 +27,5 @@
         </div>
     {% endfor %}
 
-    {% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
+    {% include "djangoandablog/pagination_snippet.html" with page_obj=page_obj %}
 {% endblock %}
