@@ -96,7 +96,7 @@ def test():
     """Runs all tests"""
     with _safe_cd(DEMO_ROOT):
         print('Andablog tests')
-        manage('test djangoandablog')
+        manage('test djangoandablog --with-coverage --cover-package=djangoandablog')
         print('Demo tests')
         manage('test')
 
