@@ -1,4 +1,5 @@
-fabric
+pynt
+Sphinx
 django-extensions
 django-authtools
 django-allauth

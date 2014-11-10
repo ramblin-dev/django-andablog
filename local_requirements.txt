@@ -3,7 +3,5 @@
 -e .
 
 -r test_requirements.txt
-Fabric
-Sphinx
 django-debug-toolbar
 bpython
