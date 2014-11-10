@@ -35,10 +35,10 @@ def _safe_cd(path):
 def _execute(command):
     try:
         return check_call(command.split(), shell=False)
-    except CalledProcessError, ex:
+    except CalledProcessError as ex:
         print(ex)
         sys.exit(ex.returncode)
-    except Exception, ex:
+    except Exception as ex:
         print('Error: {} with command: {}'.format(ex, command))
         sys.exit(1)
 
