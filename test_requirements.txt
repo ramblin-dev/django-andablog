@@ -8,3 +8,4 @@ git+git://github.com/django/django-contrib-comments.git
 nose
 django-nose
 coverage
+django-debug-toolbar

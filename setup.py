@@ -17,6 +17,7 @@ requirements = [
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'pillow>=2.6.1',
+    'Markdown>=2.5.1',
 ]
 
 test_requirements = [

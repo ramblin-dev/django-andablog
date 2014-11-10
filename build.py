@@ -11,7 +11,7 @@ from pynt import task
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DEMO_ROOT = os.path.join(ROOT, 'demo')
 VIRTUALENV = os.path.join(ROOT, 'venv')
-PYTHON = os.path.join(VIRTUALENV, 'bin/python')
+VENV_PYTHON = os.path.join(VIRTUALENV, 'bin/python')
 PIP = os.path.join(VIRTUALENV, 'bin/pip')
 LOCAL_REQUIREMENTS = os.path.join(ROOT, 'local_requirements.txt')
 DEMO_MANAGE_PY = os.path.join(DEMO_ROOT, 'manage.py')
@@ -52,7 +52,7 @@ def pip(str_args):
 @task()
 def python(str_args):
     """Runs the project's python with args"""
-    _execute(' '.join([PYTHON, str_args]))
+    _execute(' '.join([VENV_PYTHON, str_args]))
 
 
 @task()
@@ -75,6 +75,7 @@ def create_venv():
     """Create virtualenv w/local_requirements"""
     if not os.path.isdir(VIRTUALENV):
         _execute('virtualenv --distribute {}'.format(VIRTUALENV))
+        _execute('{} -m easy_install pip'.format(VENV_PYTHON))
     pip('install --upgrade -r {}'.format(LOCAL_REQUIREMENTS))
 
 
@@ -94,11 +95,7 @@ def manage(args):
 @task()
 def test():
     """Runs all tests"""
-    with _safe_cd(DEMO_ROOT):
-        print('Andablog tests')
-        manage('test djangoandablog --with-coverage --cover-package=djangoandablog')
-        print('Demo tests')
-        manage('test')
+    _execute('tox')
 
 
 @task()
