@@ -1,3 +1,4 @@
+import six
 from django.db import models
 
 from authtools.models import AbstractEmailUser
@@ -27,4 +28,4 @@ class User(AbstractEmailUser):
         return self.userprofile.get_absolute_url()
 
     def __unicode__(self):
-        return unicode(self.get_short_name())
+        return six.text_type(self.get_short_name())

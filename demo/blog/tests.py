@@ -23,7 +23,7 @@ class EntryListingTests(TestCase):
         """The listing should render properly"""
         response = self.client.get(self.url)
 
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
 
 class LatestEntriesFeed(TestCase):
@@ -52,11 +52,11 @@ class LatestEntriesFeed(TestCase):
             self.feed.item_author_link(an_entry),
         )
 
-        self.assertEquals(expected, actual)
+        self.assertEqual(expected, actual)
 
     def test_url(self):
         """Should be able to get the feed items by URL"""
         url = reverse('blog-entry-feed')
 
         response = self.client.get(url)
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)

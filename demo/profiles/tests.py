@@ -17,8 +17,8 @@ class TestProfilePage(TestCase):
         """Should be able to view a user's profile page"""
         response = self.client.get(self.url)
 
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(response.context['profile'], self.profile)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['profile'], self.profile)
         self.assertNumQueries(1)
 
 
@@ -41,7 +41,7 @@ class TestUserProfileSitemap(TestCase):
         expected_slugs = ['agent-0014', 'superman']
         actual_slugs = [profile.user.slug for profile in actual_profiles]
 
-        self.assertEquals(actual_slugs, expected_slugs)
+        self.assertEqual(actual_slugs, expected_slugs)
         self.assertNumQueries(1)
 
     def test_last_modified(self):

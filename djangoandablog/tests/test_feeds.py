@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import unittest
 
+import six
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import truncatewords
 from django.test import TestCase
@@ -26,16 +26,16 @@ class TestLatestEntriesFeed(TestCase):
         expected_slugs = ['last-post', 'busy-busy', 'welcome']
         actual_slugs = [entry.slug for entry in actual_entries]
 
-        self.assertEquals(self.feed.link(), reverse('andablog:entrylist'))
-        self.assertEquals(actual_slugs, expected_slugs)
+        self.assertEqual(self.feed.link(), reverse('andablog:entrylist'))
+        self.assertEqual(actual_slugs, expected_slugs)
         self.assertNumQueries(1)
 
     def test_feed_max(self):
         """Should only return ten by default"""
         for x in range(8):
-            models.Entry.objects.create(title=u'Ni' + unicode(x), is_published=True)
+            models.Entry.objects.create(title=u'Ni' + six.text_type(x), is_published=True)
 
-        self.assertEquals(self.feed.items().count(), 10)
+        self.assertEqual(self.feed.items().count(), 10)
 
 
 class TestLatestEntriesFeedItem(TestCase):
@@ -65,4 +65,4 @@ class TestLatestEntriesFeedItem(TestCase):
         )
 
         #NOTE: Populated author properties testing is covered in the demo site tests
-        self.assertEquals(expected, actual)
+        self.assertEqual(expected, actual)

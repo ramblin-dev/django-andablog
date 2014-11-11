@@ -22,7 +22,7 @@ class TestEntryModel(TestCase):
 
     def test_slug_creation(self):
         """The slug field should automatically get set from the title during post creation"""
-        self.assertEquals(self.entry.slug, slugify(self.entry.title))
+        self.assertEqual(self.entry.slug, slugify(self.entry.title))
 
     def test_new_duplicate(self):
         """The slug value should automatically be made unique if the slug is taken"""

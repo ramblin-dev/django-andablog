@@ -23,7 +23,7 @@ class TestEntrySitemap(TestCase):
         expected_slugs = ['last-post', 'busy-busy', 'welcome']
         actual_slugs = [entry.slug for entry in actual_entries]
 
-        self.assertEquals(actual_slugs, expected_slugs)
+        self.assertEqual(actual_slugs, expected_slugs)
         self.assertNumQueries(1)
 
     def test_last_modified(self):

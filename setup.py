@@ -12,6 +12,7 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
+    'six',
     'Django>=1.6',
     'South==1.0',  # For Django 1.6 compatibility
     'django-model-utils>=2.2',

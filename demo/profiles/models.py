@@ -1,3 +1,4 @@
+import six
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.conf import settings
@@ -24,4 +25,4 @@ class UserProfile(TimeStampedModel):
         return reverse('profile-detail', args=[str(self.user.slug)])
 
     def __unicode__(self):
-        return unicode(self.get_short_name())
+        return six.text_type(self.get_short_name())

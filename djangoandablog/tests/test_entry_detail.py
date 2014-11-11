@@ -17,8 +17,8 @@ class TestEntryDetail(TestCase):
         """A published entry should be shown"""
         response = self.client.get(self.url)
 
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(self.entry_1, response.context['entry'])
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.entry_1, response.context['entry'])
         self.assertNumQueries(1)
 
     def test_unpublished(self):
@@ -28,4 +28,4 @@ class TestEntryDetail(TestCase):
 
         response = self.client.get(self.url)
 
-        self.assertEquals(response.status_code, 404)
+        self.assertEqual(response.status_code, 404)

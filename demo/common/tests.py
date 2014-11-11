@@ -18,8 +18,8 @@ class TestCustomUserModel(TestCase):
 
     def test_slug_creation(self):
         """The slug field should automatically get set from the profile name during user creation"""
-        self.assertEquals(self.user.slug, slugify(self.user.profile_name))
+        self.assertEqual(self.user.slug, slugify(self.user.profile_name))
 
     def test_short_name(self):
         """The short name function should be the profile name"""
-        self.assertEquals(self.user.profile_name, self.user.get_short_name())
+        self.assertEqual(self.user.profile_name, self.user.get_short_name())

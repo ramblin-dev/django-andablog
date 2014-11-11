@@ -19,7 +19,7 @@ class TestAuthorDisplay(SimpleTestCase):
         self.author.get_absolute_url = mock_get_url
 
         display = andablog_tags.author_display(self.author)
-        self.assertEquals(display, 'ShyGuy')
+        self.assertEqual(display, 'ShyGuy')
 
     def test_empty_link(self):
         """Test that our template tag returns just the short name when we get "" for the URL"""
@@ -28,12 +28,12 @@ class TestAuthorDisplay(SimpleTestCase):
         self.author.get_absolute_url = mock_get_url
 
         display = andablog_tags.author_display(self.author)
-        self.assertEquals(display, 'ShyGuy')
+        self.assertEqual(display, 'ShyGuy')
 
     def test_no_link_function(self):
         """Test that our template tag returns just the short name when we can not get the URL"""
         display = andablog_tags.author_display(self.author)
-        self.assertEquals(display, 'ShyGuy')
+        self.assertEqual(display, 'ShyGuy')
 
     def test_profile_display(self):
         """Test that our template tag returns the short name hyperlinked to the URL"""
@@ -42,4 +42,4 @@ class TestAuthorDisplay(SimpleTestCase):
         self.author.get_absolute_url = mock_get_url
 
         display = andablog_tags.author_display(self.author)
-        self.assertEquals(display, SafeString('<a href="http://example.com/profile/shyguy">ShyGuy</a>'))
+        self.assertEqual(display, SafeString('<a href="http://example.com/profile/shyguy">ShyGuy</a>'))

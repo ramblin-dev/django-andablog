@@ -24,6 +24,6 @@ class TestEntryListing(TestCase):
         expected_slugs = ['last-post', 'busy-busy', 'welcome']
         actual_slugs = [entry.slug for entry in response.context['entries']]
 
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(actual_slugs, expected_slugs)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(actual_slugs, expected_slugs)
         self.assertNumQueries(1)
