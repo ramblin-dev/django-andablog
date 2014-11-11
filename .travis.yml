@@ -6,6 +6,7 @@ script:
   - tox -e $TOXENV
 env:
   - TOXENV=py34-dj1.7
+  - TOXENV=py33-dj1.7
   - TOXENV=py27-dj1.7
-  - TOXENV=py34-dj1.6
+  - TOXENV=py33-dj1.6
   - TOXENV=py27-dj1.6
