@@ -32,7 +32,7 @@ class TestLatestEntriesFeed(TestCase):
 
     def test_feed_max(self):
         """Should only return ten by default"""
-        for x in xrange(8):
+        for x in range(8):
             models.Entry.objects.create(title=u'Ni' + unicode(x), is_published=True)
 
         self.assertEquals(self.feed.items().count(), 10)

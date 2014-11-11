@@ -1,5 +1,5 @@
-import models
-import forms
+from . import models
+from . import forms
 
 
 def get_model():

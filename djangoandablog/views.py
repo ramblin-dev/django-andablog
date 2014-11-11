@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 
-import models
+from . import models
 
 
 class EntriesList(ListView):

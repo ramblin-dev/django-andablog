@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-import views
+from . import views
 
 urlpatterns = patterns('',
     url(r'^$', views.profile_redirect, name='profile-detail-redirect'),

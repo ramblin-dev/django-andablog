@@ -10,7 +10,7 @@ from django.test import TestCase
 
 from djangoandablog import models as blogmodels
 
-from feeds import LatestBlogEntries
+from .feeds import LatestBlogEntries
 
 
 class EntryListingTests(TestCase):

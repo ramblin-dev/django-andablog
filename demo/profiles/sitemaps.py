@@ -1,6 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 
-import models
+from . import models
 
 
 class UserProfileSitemap(Sitemap):

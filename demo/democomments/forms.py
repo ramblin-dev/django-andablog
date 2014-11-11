@@ -1,7 +1,7 @@
 from django_comments.forms import CommentForm
 from django import forms
 
-from models import DemoComment
+from .models import DemoComment
 
 
 class DemoCommentForm(CommentForm):
