@@ -85,7 +85,7 @@ THIRD_PARTY_APPS = (
 if DJANGO_VERSION >= (1, 7):
     THIRD_PARTY_APPS += ('debug_toolbar.apps.DebugToolbarConfig',)
 else:
-    THIRD_PARTY_APPS += ('debug_toolbar',)
+    THIRD_PARTY_APPS += ('debug_toolbar', 'south')
 
 # Apps specific for this project go here.
 LOCAL_APPS = (

@@ -14,7 +14,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = [
     'six',
     'Django>=1.6',
-    'South==1.0',  # For Django 1.6 compatibility
+    'South==1.0.1',  # For Django 1.6 compatibility
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'pillow>=2.6.1',
@@ -27,7 +27,7 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='0.1.0',
+    version='1.7.1',
     description='A blog app that is intended to embed within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan Ven Osdel',
@@ -49,6 +49,7 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
     test_suite='tests',
