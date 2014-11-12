@@ -53,6 +53,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',  # Required for django comment next url, allauth
     "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
 )
 ########## END TEMPLATE CONFIGURATION
 
@@ -73,7 +74,8 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'authtools',  # Custom User classes
     'allauth',  # Login using email
-    'allauth.account',  # Templates
+    'allauth.account',
+    'allauth.socialaccount',
     'djangoandablog',  # The blog engine
     'django_extensions',  # Misc Tools, we use it for the handy sql reset
     'django_comments',  # Replacement for Django contrib comments

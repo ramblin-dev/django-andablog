@@ -121,9 +121,10 @@ def recursive_load(search_root):
     for root, dirs, files in os.walk(search_root):
         dir_name = os.path.basename(root)
         if dir_name == 'fixtures':
-            fixtures_glob = os.path.join(root, '*.json')
-            command = 'loaddata {}'.format(fixtures_glob)
-            manage(command)
+            for file_name in files:
+                fixture_path = os.path.join(root, file_name)
+                command = 'loaddata {}'.format(fixture_path)
+                manage(command)
 
 
 @task()
