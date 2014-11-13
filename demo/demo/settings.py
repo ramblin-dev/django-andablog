@@ -81,7 +81,6 @@ THIRD_PARTY_APPS = (
     'django_comments',  # Replacement for Django contrib comments
     'bootstrapform',  # Required for bootstrap templates
     'markitup',  # Blog req: For markdown editing
-    'django_nose',
 )
 
 if DJANGO_VERSION >= (1, 7):
@@ -197,9 +196,6 @@ COMMENTS_APP = 'democomments'
 """ Markitup! Settings """
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
 MARKITUP_SET = 'markitup/sets/markdown'
-
-""" Test Settings """
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 """ South Settings """
 SOUTH_TESTS_MIGRATE = False  # South doesn't seem to look for the south_migrations folder when tests are run.

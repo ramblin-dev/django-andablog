@@ -4,7 +4,7 @@ import django_comments.models as dmodels
 class RelatedCommentManager(dmodels.CommentManager):
 
     def get_queryset(self):
-        return super(RelatedCommentManager, self).get_query_set().select_related(
+        return super(RelatedCommentManager, self).get_queryset().select_related(
             'user',
             'user__profile'
         )

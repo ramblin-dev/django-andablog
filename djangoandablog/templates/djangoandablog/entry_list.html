@@ -3,7 +3,6 @@
 
 {% block andablog_meta %}
     <meta name="description" content="Latest blog entries">
-    <meta name="author" content="TODO">
 {% endblock %}
 
 {% block andablog_page_title %}
@@ -15,7 +14,7 @@
         <div class="row">
             <div class="col-sm-10 blog-main">
                 <div class="blog-post">
-                    <h2 class="blog-post-title">{{ entry.title }}</h2>
+                    <h2 class="blog-post-title"><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
                     <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {{ entry.author|authordisplay }}{% endif %}</p>
                     <p>
                         {# TODO: "Better support for truncating markup" #2 #}
