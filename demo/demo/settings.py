@@ -200,3 +200,6 @@ MARKITUP_SET = 'markitup/sets/markdown'
 
 """ Test Settings """
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+""" South Settings """
+SOUTH_TESTS_MIGRATE = False  # South doesn't seem to look for the south_migrations folder when tests are run.

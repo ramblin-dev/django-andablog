@@ -94,8 +94,16 @@ def manage(args):
 
 @task()
 def test():
-    """Runs all tests"""
+    """Runs all tests for all environments."""
     _execute('tox')
+
+
+@task()
+def test_venv():
+    """Runs all tests on venv"""
+    with _safe_cd('demo'):
+        manage('test djangoandablog')
+        manage('test')
 
 
 @task()

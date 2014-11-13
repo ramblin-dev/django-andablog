@@ -3,6 +3,15 @@ from south.utils import datetime_utils as datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
+from django import VERSION as DJANGO_VERSION
+from django.contrib.auth import get_user_model
+
+
+assert (1, 6) <= DJANGO_VERSION < (1, 7), "This migration only supports 1.6"
+
+User = get_user_model()
+user_orm_label = '%s.%s' % (User._meta.app_label, User._meta.object_name)
+user_model_label = '%s.%s' % (User._meta.app_label, User._meta.module_name)
 
 
 class Migration(SchemaMigration):
@@ -18,7 +27,7 @@ class Migration(SchemaMigration):
             ('content', self.gf('markitup.fields.MarkupField')(no_rendered_field=True)),
             ('is_published', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('published_timestamp', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
-            ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['common.User'], null=True)),
+            ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm[user_orm_label], null=True)),
             (u'_content_rendered', self.gf('django.db.models.fields.TextField')(blank=True)),
         ))
         db.send_create_signal(u'djangoandablog', ['Entry'])
@@ -56,21 +65,9 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         },
-        u'common.user': {
-            'Meta': {'ordering': "[u'email']", 'object_name': 'User'},
-            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'email': ('django.db.models.fields.EmailField', [], {'unique': 'True', 'max_length': '255', 'db_index': 'True'}),
-            'groups': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'related_name': "u'user_set'", 'blank': 'True', 'to': u"orm['auth.Group']"}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'profile_name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '20'}),
-            'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50'}),
-            'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'related_name': "u'user_set'", 'blank': 'True', 'to': u"orm['auth.Permission']"})
+        user_model_label: {
+            'Meta': {'object_name': User.__name__, 'db_table': "'{}'".format(User._meta.db_table)},
+            User._meta.pk.attname: ('django.db.models.fields.AutoField', [], {'primary_key': 'True', 'db_column': "'{}'".format(User._meta.pk.column)}),
         },
         u'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
@@ -82,7 +79,7 @@ class Migration(SchemaMigration):
         u'djangoandablog.entry': {
             'Meta': {'object_name': 'Entry'},
             u'_content_rendered': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['common.User']", 'null': 'True'}),
+            'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['{}']".format(user_orm_label), 'null': 'True'}),
             'content': ('markitup.fields.MarkupField', [], {u'no_rendered_field': 'True'}),
             'created': ('model_utils.fields.AutoCreatedField', [], {'default': 'datetime.datetime.now'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
