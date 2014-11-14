@@ -1,8 +1,10 @@
 pynt
-Sphinx
+sphinx
 django-extensions
 django-authtools
 django-allauth
 django-bootstrap-form
 git+git://github.com/django/django-contrib-comments.git
 django-debug-toolbar
+Markdown
+South

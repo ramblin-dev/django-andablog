@@ -4,3 +4,5 @@
 
 -r test_requirements.txt
 bpython
+livereload==2.2.0
+sphinx-autobuild

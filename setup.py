@@ -14,11 +14,9 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 requirements = [
     'six',
     'Django>=1.6',
-    'South==1.0.1',  # For Django 1.6 compatibility
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'pillow>=2.6.1',
-    'Markdown>=2.5.1',
 ]
 
 test_requirements = [

@@ -5,7 +5,8 @@ A blog app that is intended to be embedded within an existing Django site.
 
 [![Build Status](https://travis-ci.org/WimpyAnalytics/django-andablog.svg?branch=master)](https://travis-ci.org/WimpyAnalytics/django-andablog)
 
-### Features
+### Using Andablog
+* [right out](https://www.youtube.com/watch?feature=player_detailpage&v=xOrgLj9lOwk#t=108)
 * Packaged templates utilize a site-provided base template without block name conflicts.
 * A URL hierarchy to include at /blog (or wherever)
 * Class based generic views that can be used directly
