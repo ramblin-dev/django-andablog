@@ -16,7 +16,7 @@ Django Settings
 ---------------
 
 1. Check Django pre-requisites
- * Confirm that the site's MEDIA_ROOT and MEDIA_URL settings are correct.
+ * Confirm that your site's MEDIA_ROOT and MEDIA_URL settings are correct.
  * Django’s site framework should be enabled.
  * The Django admin should be enabled if you wish to use the pre-canned blog administration tools
 
@@ -26,7 +26,7 @@ Django Settings
         # ... other applications,
         'djangoandablog',
         'markitup',
-        'south',   # Only if the site is on Django 1.6
+        'south',   # Only if your site is on Django 1.6
     )
 
 3. (Optional) Configure andablog to use a markup syntax for blog entries.
@@ -42,7 +42,7 @@ Django Settings
         """ An example using Django's textile package """
         MARKITUP_FILTER = ('django.contrib.markup.templatetags.markup.textile', {})
 
-    To enable a live preview, add the `Markitup! urls <https://pypi.python.org/pypi/django-markitup#installation>`_ to the site's URL hierarchy. Something like this::
+    To enable a live preview, add the `Markitup! urls <https://pypi.python.org/pypi/django-markitup#installation>`_ to your site's URL hierarchy. Something like this::
 
         url(r'^markitup/', include('markitup.urls')),
 
@@ -53,15 +53,15 @@ The following tasks allow for all possible andablog features. Ignore the items y
 
 Included Pages
 ^^^^^^^^^^^^^^
-To use the pages provided by andablog add something like this to the site's URL hierarchy::
+To use the pages provided by andablog add something like this to your site's URL hierarchy::
 
     (r'^blog/', include('djangoandablog.urls', namespace='andablog')),
 
-Then override andablog's base template to inherit from the site's base.html.
+Then override andablog's base template to inherit from your site's base.html.
 
     djangoandablog/base.html
 
-.. note:: The andablog templates make no assumptions when it comes to the content of the site's template. All blocks referenced by andablog are prefixed by 'andablog' and it is up to the site's code to place them appropriately.
+.. note:: The andablog templates make no assumptions when it comes to the content of your site's template. All blocks referenced by andablog are prefixed by 'andablog' and you place them how you like.
 
 The demo app has an `example implementation <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/templates/djangoandablog/base.html>`_.
 
@@ -94,7 +94,16 @@ The demo app has an `example implementation <https://github.com/WimpyAnalytics/d
 Customizing the author display
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Any Entry may have an Author, which is a foreignkey to the settings.auth_user_model Model. This auth.User by default or possibly a site's custom user model.
+
+When displaying the author on templates, Andablog uses the andablog_tags.author_display tag to display the author and possibly link to a profile page:
+
+* For Author display: The User model's get_short_name method is called. If not provided, the is used.
+* For a hyperlink to an Author page: The User model's get_absolute_url method is called. If this method is absent or returns None/"" the author's display name is not hyperlinked.
+
+.. hint:: If your site implements it's own comment or profile page system you may find the andablog_tags.author_display tag to be useful for the display of other users as well.
+
+The demo app has an `example custom user implementation <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/common/models.py>`_.
 
 Package Dependencies
 --------------------
@@ -108,6 +117,6 @@ Package Dependencies
 Optional Dependencies
 ---------------------
 
-* South, if the site uses Django 1.6
+* South, if your site uses Django 1.6
 * `A Markitup compatible filter package <https://pypi.python.org/pypi/django-markitup#the-markitup-filter-setting>`_ such as Markdown or Textile
 

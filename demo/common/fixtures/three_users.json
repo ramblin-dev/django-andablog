@@ -45,9 +45,12 @@
         "last_login": "2014-10-15T22:12:27.930Z",
         "groups": [],
         "user_permissions": [
-            19,
-            20,
-            21
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
         ],
         "password": "pbkdf2_sha256$12000$OaNyUE9FBwbC$93o+uMiPW1/HIdNrkIG8wmvRdWaVr2szInyCBc7O/6g=",
         "email": "agent0014@example.com",

@@ -15,12 +15,10 @@ Getting Started
    :maxdepth: 2
 
    install-usage
-   demo-site
-   ...
 
 Features
 --------
-This list will likely grow slowly. Priorities are Bugs > Django Release Compatibility > Failed Jokes > Features.
+This list will likely grow slowly. Priorities are Bug Fixes > Django Release Compatibility > Bad Jokes > Features.
 
 * Blog administration through Django admin
 * Markdown, Textile or plain text support through Django Markitup
@@ -51,6 +49,21 @@ These features are `right out <https://www.youtube.com/watch?feature=player_deta
 * Search. Since Andablog is only intended to be packaged with an existing site it would most likely become redundant.
 * Support for 3 or more Django major releases. Sorry, if you want to proceed you will have to fork until your site catches up.
 
+Trying out the demo site
+------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   demo-site
+
+Contributing to the project
+---------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   contributing
 
 Indices and tables
 ==================

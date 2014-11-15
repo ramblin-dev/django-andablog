@@ -1,0 +1,20 @@
+[
+{
+    "fields": {
+        "name": "Bill Lumbergh",
+        "is_active": true,
+        "slug": "the-boss",
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2014-10-15T21:59:58.420Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$xEvKElLT3Ys9$DAdBBjkTh8V67Gp7cUYefk0QHJqxHq/ggXi5jlm11Z4=",
+        "email": "admin@example.com",
+        "profile_name": "The Boss",
+        "date_joined": "2014-10-15T21:59:58.420Z"
+    },
+    "model": "common.user",
+    "pk": 100
+}
+]

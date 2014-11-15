@@ -1,0 +1,11 @@
+[
+{
+    "fields": {
+        "home": "The corner office",
+        "greatest_fear": "Working Saturdays",
+        "user": 100
+    },
+    "model": "profiles.userprofile",
+    "pk": 100
+}
+]

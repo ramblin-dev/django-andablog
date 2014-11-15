@@ -147,3 +147,23 @@ def loadalldatas():
 def reset_db():
     """Recreates the development db"""
     manage('reset_db --noinput')
+
+
+@task()
+def migrate():
+    """Migrates the development db"""
+    manage('migrate')
+
+
+@task()
+def rebuild_db():
+    """Wipes, migrates and loads all fixtures"""
+    reset_db()
+    migrate()
+    loadalldatas()
+
+@task()
+def docs():
+    """Makes the docs"""
+    with _safe_cd('docs'):
+        _execute('make html')
