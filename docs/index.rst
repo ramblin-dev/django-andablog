@@ -64,6 +64,8 @@ Contributing to the project
    :maxdepth: 2
 
    contributing
+   authors
+   history
 
 Indices and tables
 ==================

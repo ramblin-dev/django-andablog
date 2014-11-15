@@ -8,8 +8,8 @@ except ImportError:
     from distutils.core import setup
 
 
-readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+readme = open('docs/index.rst').read()
+history = open('docs/history.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
@@ -25,7 +25,7 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='1.7.1',
+    version='0.1.0',
     description='A blog app that is intended to embed within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan Ven Osdel',

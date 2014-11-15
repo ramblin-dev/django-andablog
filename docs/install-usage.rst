@@ -16,6 +16,7 @@ Django Settings
 ---------------
 
 1. Check Django pre-requisites
+
  * Confirm that your site's MEDIA_ROOT and MEDIA_URL settings are correct.
  * Django’s site framework should be enabled.
  * The Django admin should be enabled if you wish to use the pre-canned blog administration tools
@@ -63,7 +64,7 @@ Then override andablog's base template to inherit from your site's base.html.
 
 .. note:: The andablog templates make no assumptions when it comes to the content of your site's template. All blocks referenced by andablog are prefixed by 'andablog' and you place them how you like.
 
-The demo app has an `example implementation <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/templates/djangoandablog/base.html>`_.
+The demo app has an `example of overriding andablog's base.html <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/templates/djangoandablog/base.html>`_.
 
 Blog Entry Comments
 ^^^^^^^^^^^^^^^^^^^
@@ -75,21 +76,21 @@ To provide andablog with comments, override the following template snippets::
 
 The `comments count snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/djangoandablog/templates/djangoandablog/comments_count_snippet.html>`_ is used to provide the necessary comment count. The `comments snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/djangoandablog/templates/djangoandablog/comments_snippet.html>`_ is for listing the comments below the entry.
 
-The demo app has an `example implementation <https://github.com/WimpyAnalytics/django-andablog/tree/master/demo/templates/djangoandablog>`_.
+The demo app has an `example of overriding the snippets <https://github.com/WimpyAnalytics/django-andablog/tree/master/demo/templates/djangoandablog>`_.
 
 Adding blog entries to the sitemap
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Andablog provides a djangoandablog.sitemaps.EntrySitemap class that can be used within `The Sitemap Framework <https://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/>`_.
 
-The demo app has an `example implementation <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/demo/urls.py>`_.
+The demo app has an `example using the EntrySitemap <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/demo/urls.py>`_.
 
 Providing an entries feed
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Andablog provides a djangoandablog.feeds.LatestEntriesFeed base class that can be sub-classed to provide a blog entries feed class to `The Syndication Feed Framework <https://docs.djangoproject.com/en/dev/ref/contrib/syndication/>`_.
 
-The demo app has an `example implementation <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/blog/feeds.py>`_.
+The demo app has an `example feed subclass <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/blog/feeds.py>`_.
 
 Customizing the author display
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
