@@ -4,7 +4,7 @@ Django and a Blog
 
 A blog app that is only intended to embed within an existing Django site.
 
-* Free software: MIT license `(source) <https://github.com/WimpyAnalytics/django-andablog>`_
+* Free software: BSD license `(source) <https://github.com/WimpyAnalytics/django-andablog>`_
 * Compatible with Django 1.7 and 1.6
 * Compatible with Python 3.4, 3.3 and 2.7
 
