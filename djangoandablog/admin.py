@@ -23,11 +23,16 @@ class EntryAdmin(admin.ModelAdmin):
     readonly_fields = (
         'slug',
         'published_timestamp',
+        'author',
     )
 
     inlines = [
         EntryImageInline,
     ]
+
+    def save_model(self, request, obj, form, change):
+        obj.author = request.user
+        obj.save()
 
 
 class EntryImageAdmin(admin.ModelAdmin):
