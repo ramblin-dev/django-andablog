@@ -43,3 +43,12 @@ class TestAuthorDisplay(SimpleTestCase):
 
         display = andablog_tags.author_display(self.author)
         self.assertEqual(display, SafeString('<a href="http://example.com/profile/shyguy">ShyGuy</a>'))
+
+    def test_no_short_name(self):
+        """Test that our template tag uses the unicode representation when there is no short name"""
+        class MockAuthor(object):
+            pass
+        self.author = MockAuthor()
+
+        display = andablog_tags.author_display(self.author)
+        self.assertIn('MockAuthor object', display)
