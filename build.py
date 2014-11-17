@@ -1,13 +1,14 @@
 #!/usr/bin/python
 import logging
-
 import os
 import contextlib
 import sys
 from subprocess import check_call, CalledProcessError
 
+import pandoc
 from pynt import task
 
+pandoc.core.PANDOC_PATH = 'pandoc'
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DEMO_ROOT = os.path.join(ROOT, 'demo')
 VIRTUALENV = os.path.join(ROOT, 'venv')
@@ -157,7 +158,7 @@ def migrate():
 
 @task()
 def rebuild_db():
-    """Wipes, migrates and loads all fixtures"""
+    """Wipes, migrates and loads fixtures"""
     reset_db()
     migrate()
     loadalldatas()
@@ -167,3 +168,12 @@ def docs():
     """Makes the docs"""
     with _safe_cd('docs'):
         _execute('make html')
+
+@task()
+def update_readme_rst():
+    """Update README.rst from README.md"""
+    doc = pandoc.Document()
+    doc.markdown = open('README.md').read()
+    rst = open('README.rst', 'w')
+    rst.write(doc.rst)
+    rst.close()
