@@ -5,10 +5,8 @@ import contextlib
 import sys
 from subprocess import check_call, CalledProcessError
 
-import pandoc
 from pynt import task
 
-pandoc.core.PANDOC_PATH = 'pandoc'
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DEMO_ROOT = os.path.join(ROOT, 'demo')
 VIRTUALENV = os.path.join(ROOT, 'venv')
@@ -170,10 +168,6 @@ def docs():
         _execute('make html')
 
 @task()
-def update_readme_rst():
+def readme_rst():
     """Update README.rst from README.md"""
-    doc = pandoc.Document()
-    doc.markdown = open('README.md').read()
-    rst = open('README.rst', 'w')
-    rst.write(doc.rst)
-    rst.close()
+    python('readme_rst.py')
