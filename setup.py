@@ -31,6 +31,7 @@ setup(
     author='Ivan VenOsdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
+    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/0.1.0',
     packages=[
         'djangoandablog',
     ],
@@ -51,5 +52,5 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     test_suite='tests',
-    tests_require=test_requirements
+    tests_require=test_requirements,
 )
