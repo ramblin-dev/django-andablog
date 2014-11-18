@@ -30,7 +30,11 @@ Django Settings
         'south',   # Only if your site is on Django 1.6
     )
 
-3. (Optional) Configure andablog to use a markup syntax for blog entries.
+3. Run the migrations
+
+    $ python manage.py migrate djangoandablog
+
+4. (Optional) Configure andablog to use a markup syntax for blog entries.
 
     For Markdown, install the Markdown pypi package and add the appropriate `Markitup! settings <https://pypi.python.org/pypi/django-markitup>`_ to your settings.py::
 
