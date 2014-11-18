@@ -9,7 +9,7 @@ except ImportError:
 
 
 readme = open('README.rst').read()
-history = open('docs/history.rst').read().replace('.. :changelog:', '')
+history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
@@ -28,7 +28,7 @@ setup(
     version='0.1.0',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
-    author='Ivan VenOsdel',
+    author='Ivan Ven Osdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
     download_url='https://github.com/wimpyanalytics/django-andablog/tarball/0.1.0',

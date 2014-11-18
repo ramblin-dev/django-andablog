@@ -60,12 +60,7 @@ Trying out the demo site
 Contributing to the project
 ---------------------------
 
-.. toctree::
-   :maxdepth: 2
-
-   contributing
-   authors
-   history
+Checkout the `project page <https://github.com/WimpyAnalytics/django-andablog>`_
 
 Indices and tables
 ==================
