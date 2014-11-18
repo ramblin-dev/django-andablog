@@ -1,17 +1,15 @@
 django-andablog
 ===============
 
-A blog app that is only intended to be embedded within an existing
-Django site.
-
 |Build Status|
 
-Welcome!
-~~~~~~~~
+(Just) A blog app for Django
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is full
-`documentation <http://django-andablog.readthedocs.org/en/latest/>`__
-but here are the highlights.
+This app is only intended to be embedded within an existing Django site.
+Full
+`documentation <http://django-andablog.readthedocs.org/en/latest/>`__ is
+available but here are the highlights.
 
 -  `Features <http://django-andablog.readthedocs.org/en/latest/#features>`__
 -  `Installation &

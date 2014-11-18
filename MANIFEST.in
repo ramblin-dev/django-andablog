@@ -1,4 +1,7 @@
 include LICENSE
+include CONTRIBUTING.rst
+include HISTORY.rst
+include AUTHORS.rst
 
 recursive-include djangoandablog *
 recursive-include demo *
