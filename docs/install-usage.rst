@@ -30,7 +30,7 @@ Django Settings
         'south',   # Only if your site is on Django 1.6
     )
 
-3. Run the migrations
+3. Run the migrations::
 
     $ python manage.py migrate djangoandablog
 
