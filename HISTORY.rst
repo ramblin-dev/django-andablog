@@ -3,8 +3,8 @@
 History
 -------
 
-1.0.0 (TBD)
------------
+1.0.0 (2014-11-20)
+------------------
 **Backwards Incompatible with 0.1.0.**
 This release includes a rename of the django app package from djangoandablog to andablog to better follow
 community conventions. This of course is a very large breaking change, which is why the version is 1.0.
