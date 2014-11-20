@@ -3,7 +3,7 @@
 
 from django.test import TestCase
 
-from djangoandablog import models
+from andablog import models
 
 
 class TestEntryDetail(TestCase):

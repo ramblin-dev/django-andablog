@@ -6,7 +6,7 @@ from . import models
 class EntriesList(ListView):
 
     model = models.Entry
-    template_name = 'djangoandablog/entry_list.html'
+    template_name = 'andablog/entry_list.html'
     context_object_name = 'entries'
     paginate_by = 10
     paginate_orphans = 5
@@ -19,7 +19,7 @@ class EntriesList(ListView):
 class EntryDetail(DetailView):
 
     model = models.Entry
-    template_name = 'djangoandablog/entry_detail.html'
+    template_name = 'andablog/entry_detail.html'
     context_object_name = 'entry'
     slug_field = 'slug'
 

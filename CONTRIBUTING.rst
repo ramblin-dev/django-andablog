@@ -116,7 +116,7 @@ Making changes
 
     $ cd demo
     $ python manage.py test
-    $ python manage.py test djangoandablog
+    $ python manage.py test andablog
 
 2. When you're done making changes, check that your changes work with all supported Python and Django versions::
 

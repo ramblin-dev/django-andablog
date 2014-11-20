@@ -230,7 +230,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'djangoandablog', u'Django Andablog Documentation',
+    ('index', 'andablog', u'Django Andablog Documentation',
      [u'Ivan Ven Osdel'], 1)
 ]
 

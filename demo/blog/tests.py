@@ -8,7 +8,7 @@ testing the integration points of the chosen blog engine. E.g.
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 
-from djangoandablog import models as blogmodels
+from andablog import models as blogmodels
 
 from .feeds import LatestBlogEntries
 

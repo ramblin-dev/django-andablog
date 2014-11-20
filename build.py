@@ -101,7 +101,7 @@ def test():
 def test_venv():
     """Runs all tests on venv"""
     with _safe_cd('demo'):
-        manage('test djangoandablog')
+        manage('test andablog')
         manage('test')
 
 

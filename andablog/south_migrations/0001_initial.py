@@ -18,7 +18,7 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Entry'
-        db.create_table(u'djangoandablog_entry', (
+        db.create_table(u'andablog_entry', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('created', self.gf('model_utils.fields.AutoCreatedField')(default=datetime.datetime.now)),
             ('modified', self.gf('model_utils.fields.AutoLastModifiedField')(default=datetime.datetime.now)),
@@ -30,25 +30,25 @@ class Migration(SchemaMigration):
             ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm[user_orm_label], null=True)),
             (u'_content_rendered', self.gf('django.db.models.fields.TextField')(blank=True)),
         ))
-        db.send_create_signal(u'djangoandablog', ['Entry'])
+        db.send_create_signal(u'andablog', ['Entry'])
 
         # Adding model 'EntryImage'
-        db.create_table(u'djangoandablog_entryimage', (
+        db.create_table(u'andablog_entryimage', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('created', self.gf('model_utils.fields.AutoCreatedField')(default=datetime.datetime.now)),
             ('modified', self.gf('model_utils.fields.AutoLastModifiedField')(default=datetime.datetime.now)),
-            ('entry', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['djangoandablog.Entry'])),
+            ('entry', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['andablog.Entry'])),
             ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
         ))
-        db.send_create_signal(u'djangoandablog', ['EntryImage'])
+        db.send_create_signal(u'andablog', ['EntryImage'])
 
 
     def backwards(self, orm):
         # Deleting model 'Entry'
-        db.delete_table(u'djangoandablog_entry')
+        db.delete_table(u'andablog_entry')
 
         # Deleting model 'EntryImage'
-        db.delete_table(u'djangoandablog_entryimage')
+        db.delete_table(u'andablog_entryimage')
 
 
     models = {
@@ -76,7 +76,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'djangoandablog.entry': {
+        u'andablog.entry': {
             'Meta': {'object_name': 'Entry'},
             u'_content_rendered': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['{}']".format(user_orm_label), 'null': 'True'}),
@@ -89,14 +89,14 @@ class Migration(SchemaMigration):
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '500'})
         },
-        u'djangoandablog.entryimage': {
+        u'andablog.entryimage': {
             'Meta': {'object_name': 'EntryImage'},
             'created': ('model_utils.fields.AutoCreatedField', [], {'default': 'datetime.datetime.now'}),
-            'entry': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['djangoandablog.Entry']"}),
+            'entry': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['andablog.Entry']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'modified': ('model_utils.fields.AutoLastModifiedField', [], {'default': 'datetime.datetime.now'})
         }
     }
 
-    complete_apps = ['djangoandablog']
+    complete_apps = ['andablog']

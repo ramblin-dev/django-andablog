@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('created', model_utils.fields.AutoCreatedField(default=django.utils.timezone.now, verbose_name='created', editable=False)),
                 ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('image', models.ImageField(upload_to=b'andablog/images', blank=True)),
-                ('entry', models.ForeignKey(to='djangoandablog.Entry')),
+                ('entry', models.ForeignKey(to='andablog.Entry')),
             ],
             options={
                 'abstract': False,
