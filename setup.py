@@ -31,7 +31,7 @@ setup(
     author='Ivan Ven Osdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
-    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/0.1.0',
+    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/1.0.0',
     packages=[
         'andablog',
     ],
