@@ -1,4 +1,4 @@
-{% extends "djangoandablog/base.html" %}
+{% extends "andablog/base.html" %}
 {% load andablog_tags %}
 
 {% block andablog_meta %}
@@ -18,6 +18,6 @@
             {{ entry.content }}
         </p>
 
-        {% include "djangoandablog/comments_snippet.html" with comment_object=entry %}
+        {% include "andablog/comments_snippet.html" with comment_object=entry %}
     </div>
 {% endblock %}

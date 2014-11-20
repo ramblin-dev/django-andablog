@@ -76,7 +76,7 @@ THIRD_PARTY_APPS = (
     'allauth',  # Login using email
     'allauth.account',
     'allauth.socialaccount',
-    'djangoandablog',  # The blog engine
+    'andablog',  # The blog engine
     'django_extensions',  # Misc Tools, we use it for the handy sql reset
     'django_comments',  # Replacement for Django contrib comments
     'bootstrapform',  # Required for bootstrap templates

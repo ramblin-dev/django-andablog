@@ -25,14 +25,14 @@ Django Settings
 
     INSTALLED_APPS = (
         # ... other applications,
-        'djangoandablog',
+        'andablog',
         'markitup',
         'south',   # Only if your site is on Django 1.6
     )
 
 3. Run the migrations::
 
-    $ python manage.py migrate djangoandablog
+    $ python manage.py migrate andablog
 
 4. (Optional) Configure andablog to use a markup syntax for blog entries.
 
@@ -60,32 +60,32 @@ Included Pages
 ^^^^^^^^^^^^^^
 To use the pages provided by andablog add something like this to your site's URL hierarchy::
 
-    (r'^blog/', include('djangoandablog.urls', namespace='andablog')),
+    (r'^blog/', include('andablog.urls', namespace='andablog')),
 
 Then override andablog's base template to inherit from your site's base.html.
 
-    djangoandablog/base.html
+    andablog/base.html
 
 .. note:: The andablog templates make no assumptions when it comes to the content of your site's template. All blocks referenced by andablog are prefixed by 'andablog' and you place them how you like.
 
-The demo app has an `example of overriding andablog's base.html <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/templates/djangoandablog/base.html>`_.
+The demo app has an `example of overriding andablog's base.html <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/templates/andablog/base.html>`_.
 
 Blog Entry Comments
 ^^^^^^^^^^^^^^^^^^^
 
 To provide andablog with comments, override the following template snippets::
 
-    djangoandablog/comments_count_snippet.html
-    djangoandablog/comments_snippet.html
+    andablog/comments_count_snippet.html
+    andablog/comments_snippet.html
 
-The `comments count snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/djangoandablog/templates/djangoandablog/comments_count_snippet.html>`_ is used to provide the necessary comment count. The `comments snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/djangoandablog/templates/djangoandablog/comments_snippet.html>`_ is for listing the comments below the entry.
+The `comments count snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/andablog/templates/djangoandablog/comments_count_snippet.html>`_ is used to provide the necessary comment count. The `comments snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/andablog/templates/andablog/comments_snippet.html>`_ is for listing the comments below the entry.
 
-The demo app has an `example of overriding the snippets <https://github.com/WimpyAnalytics/django-andablog/tree/master/demo/templates/djangoandablog>`_.
+The demo app has an `example of overriding the snippets <https://github.com/WimpyAnalytics/django-andablog/tree/master/demo/templates/andablog>`_.
 
 Adding blog entries to the sitemap
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Andablog provides a djangoandablog.sitemaps.EntrySitemap class that can be used within `The Sitemap Framework <https://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/>`_.
+Andablog provides a andablog.sitemaps.EntrySitemap class that can be used within `The Sitemap Framework <https://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/>`_.
 
 The demo app has an `example using the EntrySitemap <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/demo/urls.py>`_.
 

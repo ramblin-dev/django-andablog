@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 from django.conf.urls.static import static
 
-from djangoandablog.sitemaps import EntrySitemap
+from andablog.sitemaps import EntrySitemap
 
 from profiles.sitemaps import UserProfileSitemap
 

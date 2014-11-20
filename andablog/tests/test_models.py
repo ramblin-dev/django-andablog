@@ -5,7 +5,7 @@ from django.test import TestCase
 from django.utils.text import slugify
 from django.utils import timezone
 
-from djangoandablog import models
+from andablog import models
 
 
 class TestEntryModel(TestCase):

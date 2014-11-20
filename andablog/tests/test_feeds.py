@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 from django.template.defaultfilters import truncatewords
 from django.test import TestCase
 
-from djangoandablog import models, feeds
+from andablog import models, feeds
 
 
 class TestLatestEntriesFeed(TestCase):

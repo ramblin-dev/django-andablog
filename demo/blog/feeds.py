@@ -1,5 +1,5 @@
 from django.core.urlresolvers import reverse_lazy
-from djangoandablog.feeds import LatestEntriesFeed
+from andablog.feeds import LatestEntriesFeed
 
 
 class LatestBlogEntries(LatestEntriesFeed):

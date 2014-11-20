@@ -25,7 +25,7 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='0.1.0',
+    version='1.0.0',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan Ven Osdel',
@@ -33,15 +33,15 @@ setup(
     url='https://github.com/WimpyAnalytics/django-andablog',
     download_url='https://github.com/wimpyanalytics/django-andablog/tarball/0.1.0',
     packages=[
-        'djangoandablog',
+        'andablog',
     ],
-    package_dir={'djangoandablog':
-                 'djangoandablog'},
+    package_dir={'andablog':
+                 'andablog'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
     zip_safe=False,
-    keywords=['django-andablog', 'blog', 'django', 'app', 'reusable app'],
+    keywords=['django-andablog', 'blog', 'django', 'app', 'reusable app', 'andablog'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
