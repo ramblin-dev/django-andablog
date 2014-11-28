@@ -1,5 +1,6 @@
 pynt
 sphinx
+sphinx_rtd_theme
 django-extensions
 django-authtools
 django-allauth

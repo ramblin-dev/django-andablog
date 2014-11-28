@@ -40,7 +40,7 @@ Not Features
 .. role:: strike
     :class: strike
 
-These features are `right out <https://www.youtube.com/watch?feature=player_detailpage&v=xOrgLj9lOwk#t=108>`_. If you are looking for one of them, :strike:`consult your doctor,` andablog may not be right for you.
+These features are `right out <https://www.youtube.com/watch?feature=player_detailpage&v=xOrgLj9lOwk#t=108>`_. If you are looking for one of them, andablog may not be right for you.
 
 * A User model. Andablog uses the settings.auth_user_model relation string for the author.
 * Author Profile pages. These can be implemented by the site and linked to by andablog.
