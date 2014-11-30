@@ -81,7 +81,7 @@ def clean():
 @task()
 def delete_venv():
     """Deletes the virtualenv"""
-    _execute("rm -rf", VIRTUALENV)
+    _execute('rm', '-rf', VIRTUALENV)
 
 
 @task()
@@ -101,9 +101,9 @@ def recreate_venv():
 
 
 @task()
-def manage(arg_string):
+def manage(*arg_string):
     """Runs the demo's manage.py with args"""
-    _execute_manage(arg_string)  # Shows as one arg to manage.py
+    _execute_manage(*arg_string)  # Shows as one arg to manage.py
 
 
 @task()

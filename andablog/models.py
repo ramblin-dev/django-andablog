@@ -10,6 +10,7 @@ from django.conf import settings
 
 from markitup.fields import MarkupField
 from model_utils.models import TimeStampedModel
+from taggit.managers import TaggableManager
 
 
 class Entry(TimeStampedModel):
@@ -23,6 +24,7 @@ class Entry(TimeStampedModel):
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=False)
+    tags = TaggableManager()
 
     def __str__(self):
         return self.title

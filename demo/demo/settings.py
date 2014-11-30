@@ -81,6 +81,7 @@ THIRD_PARTY_APPS = (
     'django_comments',  # Replacement for Django contrib comments
     'bootstrapform',  # Required for bootstrap templates
     'markitup',  # Blog req: For markdown editing
+    "taggit",   # Blog req: For tags
 )
 
 if DJANGO_VERSION >= (1, 7):

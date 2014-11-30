@@ -1,0 +1,88 @@
+[
+{
+    "fields": {
+        "name": "goodbye",
+        "slug": "goodbye"
+    },
+    "model": "taggit.tag",
+    "pk": 2
+},
+{
+    "fields": {
+        "name": "your thoughts are mine",
+        "slug": "your-thoughts-are-mine"
+    },
+    "model": "taggit.tag",
+    "pk": 3
+},
+{
+    "fields": {
+        "name": "hello",
+        "slug": "hello"
+    },
+    "model": "taggit.tag",
+    "pk": 4
+},
+{
+    "fields": {
+        "name": "cliche",
+        "slug": "cliche"
+    },
+    "model": "taggit.tag",
+    "pk": 6
+},
+{
+    "fields": {
+        "tag": 6,
+        "content_type": 16,
+        "object_id": 1
+    },
+    "model": "taggit.taggeditem",
+    "pk": 7
+},
+{
+    "fields": {
+        "tag": 3,
+        "content_type": 16,
+        "object_id": 2
+    },
+    "model": "taggit.taggeditem",
+    "pk": 8
+},
+{
+    "fields": {
+        "tag": 4,
+        "content_type": 16,
+        "object_id": 2
+    },
+    "model": "taggit.taggeditem",
+    "pk": 9
+},
+{
+    "fields": {
+        "tag": 6,
+        "content_type": 16,
+        "object_id": 2
+    },
+    "model": "taggit.taggeditem",
+    "pk": 10
+},
+{
+    "fields": {
+        "tag": 2,
+        "content_type": 16,
+        "object_id": 3
+    },
+    "model": "taggit.taggeditem",
+    "pk": 11
+},
+{
+    "fields": {
+        "tag": 6,
+        "content_type": 16,
+        "object_id": 3
+    },
+    "model": "taggit.taggeditem",
+    "pk": 12
+}
+]
