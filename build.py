@@ -11,6 +11,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DEMO_ROOT = os.path.join(ROOT, 'demo')
 VIRTUALENV = os.path.join(ROOT, 'venv')
 VENV_PYTHON = os.path.join(VIRTUALENV, 'bin/python')
+VENV_SPHINX = os.path.join(VIRTUALENV, 'bin/sphinx-build')
+VENV_SPHINX_AUTO = os.path.join(VIRTUALENV, 'bin/sphinx-autobuild')
 PIP = os.path.join(VIRTUALENV, 'bin/pip')
 LOCAL_REQUIREMENTS = os.path.join(ROOT, 'local_requirements.txt')
 DEMO_MANAGE_PY = os.path.join(DEMO_ROOT, 'manage.py')
@@ -31,27 +33,40 @@ def _safe_cd(path):
         os.chdir(starting_directory)
 
 
-def _execute(command):
+def _execute(script, *args):
+    popen_args = [script] + list(args)
     try:
-        return check_call(command.split(), shell=False)
+        return check_call(popen_args, shell=False)
     except CalledProcessError as ex:
         print(ex)
         sys.exit(ex.returncode)
     except Exception as ex:
-        print('Error: {} with command: {}'.format(ex, command))
+        print('Error: {} with script: {} and args {}'.format(ex, script, args))
         sys.exit(1)
 
 
+def _execute_pip(*args):
+    _execute(PIP, *args)
+
+
+def _execute_python(*args):
+    _execute(VENV_PYTHON, *args)
+
+
+def _execute_manage(*args):
+    _execute_python(DEMO_MANAGE_PY, *args)
+
+
 @task()
-def pip(str_args):
+def pip(*str_args):
     """Runs the project's pip with args"""
-    _execute('{} {}'.format(PIP, str_args))
+    _execute_pip(*str_args)  # This will be one arg to popen
 
 
 @task()
-def python(str_args):
+def python(*str_args):
     """Runs the project's python with args"""
-    _execute(' '.join([VENV_PYTHON, str_args]))
+    _execute_python(*str_args)
 
 
 @task()
@@ -66,16 +81,16 @@ def clean():
 @task()
 def delete_venv():
     """Deletes the virtualenv"""
-    _execute("rm -rf {}".format(VIRTUALENV))
+    _execute('rm', '-rf', VIRTUALENV)
 
 
 @task()
 def create_venv():
     """Create virtualenv w/local_requirements"""
     if not os.path.isdir(VIRTUALENV):
-        _execute('virtualenv --distribute {}'.format(VIRTUALENV))
-        _execute('{} -m easy_install pip'.format(VENV_PYTHON))
-    pip('install --upgrade -r {}'.format(LOCAL_REQUIREMENTS))
+        _execute('virtualenv', '--distribute', VIRTUALENV)
+        _execute_python('-m', 'easy_install', 'pip')
+    _execute_pip('install', '--upgrade', '-r', LOCAL_REQUIREMENTS)
 
 
 @task()
@@ -86,29 +101,32 @@ def recreate_venv():
 
 
 @task()
-def manage(args):
+def manage(*arg_string):
     """Runs the demo's manage.py with args"""
-    python(' '.join([DEMO_MANAGE_PY, args]))
+    _execute_manage(*arg_string)  # Shows as one arg to manage.py
 
 
 @task()
-def test():
+def test(flush=False):
     """Runs all tests for all environments."""
-    _execute('tox')
+    args = ['tox']
+    if flush:
+        args.append('-r')
+    _execute(*args)
 
 
 @task()
 def test_venv():
     """Runs all tests on venv"""
     with _safe_cd('demo'):
-        manage('test andablog')
-        manage('test')
+        _execute_manage('test', 'andablog')
+        _execute_manage('test')
 
 
 @task()
 def runserver():
     """Runs the demo development server"""
-    python('{} runserver'.format(DEMO_MANAGE_PY))
+    _execute_manage('runserver')
 
 
 @task()
@@ -118,8 +136,7 @@ def dumpdata(app_target):
     logger = logging.getLogger('pynt')
     logger.propagate = False
 
-    manage_args = 'dumpdata --indent=4 {}'.format(app_target)
-    manage(manage_args)
+    _execute_manage('dumpdata', '--indent=4', app_target)
 
 
 @task()
@@ -130,8 +147,7 @@ def recursive_load(search_root):
         if dir_name == 'fixtures':
             for file_name in files:
                 fixture_path = os.path.join(root, file_name)
-                command = 'loaddata {}'.format(fixture_path)
-                manage(command)
+                _execute_manage('loaddata', fixture_path)
 
 
 @task()
@@ -145,13 +161,13 @@ def loadalldatas():
 @task()
 def reset_db():
     """Recreates the development db"""
-    manage('reset_db --noinput')
+    _execute_manage('reset_db', '--noinput')
 
 
 @task()
 def migrate():
     """Migrates the development db"""
-    manage('migrate')
+    _execute_manage('migrate')
 
 
 @task()
@@ -161,13 +177,22 @@ def rebuild_db():
     migrate()
     loadalldatas()
 
+
 @task()
 def docs():
     """Makes the docs"""
     with _safe_cd('docs'):
-        _execute('make html')
+        _execute(VENV_SPHINX, '-b', 'html', '.', '_build/html')
+
+
+@task()
+def rundocserver():
+    """Runs the sphinx-autobuild server"""
+    with _safe_cd('docs'):
+        _execute(VENV_SPHINX_AUTO, '.', '_build/html')
+
 
 @task()
 def readme_rst():
     """Update README.rst from README.md"""
-    python('readme_rst.py')
+    _execute_python('readme_rst.py')

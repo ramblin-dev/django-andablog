@@ -21,7 +21,8 @@ Features
 This list will likely grow slowly. Priorities are Bug Fixes > Django Release Compatibility > Bad Jokes > Features.
 
 * Blog administration through Django admin
-* Markdown, Textile or plain text support through Django Markitup
+* Markdown, Textile or plain text support through django-markitup
+* Blog Entry tag management through django-taggit.
 * Template block names are prefixed as to not conflict with the those used by the site.
 * A URL hierarchy to include at /blog (or wherever)
 * A Django sitemaps EntrySitemap class
@@ -40,7 +41,7 @@ Not Features
 .. role:: strike
     :class: strike
 
-These features are `right out <https://www.youtube.com/watch?feature=player_detailpage&v=xOrgLj9lOwk#t=108>`_. If you are looking for one of them, :strike:`consult your doctor,` andablog may not be right for you.
+These features are `right out <https://www.youtube.com/watch?feature=player_detailpage&v=xOrgLj9lOwk#t=108>`_. If you are looking for one of them, andablog may not be right for you.
 
 * A User model. Andablog uses the settings.auth_user_model relation string for the author.
 * Author Profile pages. These can be implemented by the site and linked to by andablog.
