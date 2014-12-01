@@ -107,9 +107,12 @@ def manage(*arg_string):
 
 
 @task()
-def test():
+def test(flush=False):
     """Runs all tests for all environments."""
-    _execute('tox')
+    args = ['tox']
+    if flush:
+        args.append('-r')
+    _execute(*args)
 
 
 @task()

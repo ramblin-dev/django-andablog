@@ -26,13 +26,14 @@ Django Settings
     INSTALLED_APPS = (
         # ... other applications,
         'andablog',
-        'markitup',
+        'markitup',  # For entry content
+        'taggit',  # For entry tags
         'south',   # Only if your site is on Django 1.6
     )
 
 3. Run the migrations::
 
-    $ python manage.py migrate andablog
+    $ python manage.py migrate
 
 4. (Optional) Configure andablog to use a markup syntax for blog entries.
 
@@ -110,6 +111,16 @@ When displaying the author on templates, Andablog uses the andablog_tags.author_
 
 The demo app has an `example custom user implementation <https://github.com/WimpyAnalytics/django-andablog/blob/master/demo/common/models.py>`_.
 
+Blog Entry Tags
+^^^^^^^^^^^^^^^
+The Entry model has a tags field provided by the django-taggit dependency. Out of the box this gives Andablog users
+the ability to add tags to an entry and manage them within the admin.
+
+At the moment Andablog does not provide any template examples or tags that display them for you.
+
+There is a (no longer maintained) django-taggit-templatetags project and some (maintained) offshoots to consider. They
+weren't up to date enough to package within Andablog.
+
 Package Dependencies
 --------------------
 * Python 3.4, 3.3 or 2.7
@@ -117,6 +128,7 @@ Package Dependencies
 * six
 * django-model-utils
 * django-markitup
+* django-taggit
 * Pillow
 
 Optional Dependencies

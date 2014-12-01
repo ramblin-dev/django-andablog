@@ -21,7 +21,8 @@ Features
 This list will likely grow slowly. Priorities are Bug Fixes > Django Release Compatibility > Bad Jokes > Features.
 
 * Blog administration through Django admin
-* Markdown, Textile or plain text support through Django Markitup
+* Markdown, Textile or plain text support through django-markitup
+* Blog Entry tag management through django-taggit.
 * Template block names are prefixed as to not conflict with the those used by the site.
 * A URL hierarchy to include at /blog (or wherever)
 * A Django sitemaps EntrySitemap class
