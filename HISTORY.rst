@@ -3,7 +3,7 @@
 History
 -------
 
-1.1.0 (2014-11-20)
+1.1.0 (2014-12-01)
 ------------------
 Blog entries can now have tags
  * The entry model now supports tags by way of the django-taggit package.
