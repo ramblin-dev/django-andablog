@@ -3,6 +3,10 @@
 History
 -------
 
+1.1.1 (2014-12-02)
+------------------
+Fixed a bug where the tags field was required in the admin.
+
 1.1.0 (2014-12-01)
 ------------------
 Blog entries can now have tags

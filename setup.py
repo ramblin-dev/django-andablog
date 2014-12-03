@@ -26,13 +26,13 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='1.1.0',
+    version='1.1.1',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan Ven Osdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
-    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/1.1.0',
+    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/1.1.1',
     packages=[
         'andablog',
     ],

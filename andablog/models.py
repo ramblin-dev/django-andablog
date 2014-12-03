@@ -24,7 +24,7 @@ class Entry(TimeStampedModel):
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=False)
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     def __str__(self):
         return self.title
