@@ -23,7 +23,7 @@ class Entry(TimeStampedModel):
     content = MarkupField()
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=False)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True)
     tags = TaggableManager(blank=True)
 
     def __str__(self):
