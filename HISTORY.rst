@@ -3,11 +3,11 @@
 History
 -------
 
-1.1.2 (2014-12-02)
+1.2.1 (2014-12-02)
 ------------------
 The author is now selectable when editing entries in the admin.
-* The list is limited to superusers and anyone with an andablog Entry permission.
-* The initial value is the current user.
+ * The list is limited to superusers and anyone with an andablog Entry permission.
+ * The initial value is the current user.
 
 1.1.1 (2014-12-02)
 ------------------
@@ -16,8 +16,8 @@ Fixed a bug where the tags field was required in the admin.
 1.1.0 (2014-12-01)
 ------------------
 Blog entries can now have tags
-* The entry model now supports tags by way of the django-taggit package.
-* This affects the model only, there are no template examples or tags.
+ * The entry model now supports tags by way of the django-taggit package.
+ * This affects the model only, there are no template examples or tags.
 
 1.0.0 (2014-11-20)
 ------------------
