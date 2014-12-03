@@ -32,7 +32,7 @@ setup(
     author='Ivan Ven Osdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
-    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/1.1.1',
+    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/1.2.1',
     packages=[
         'andablog',
     ],
