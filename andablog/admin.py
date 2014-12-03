@@ -36,6 +36,7 @@ class EntryAdmin(admin.ModelAdmin):
             kwargs["queryset"] = get_user_model().objects.filter(
                 Q(is_superuser=True) | Q(user_permissions__content_type__app_label='andablog',
                                          user_permissions__content_type__model='entry')).distinct()
+            kwargs['initial'] = request.user.id
         return super(EntryAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
 
