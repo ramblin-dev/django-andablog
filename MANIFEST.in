@@ -6,7 +6,6 @@ include AUTHORS.rst
 recursive-include andablog *
 recursive-include demo *
 recursive-include docs *.rst conf.py Makefile make.bat
-recursive-include docs/_static *
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
