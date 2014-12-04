@@ -3,6 +3,10 @@
 History
 -------
 
+1.2.2 (2014-12-04)
+------------------
+Fixed a bug where the Django 1.7.x migration for recent DB changes was somehow missed.
+
 1.2.1 (2014-12-02)
 ------------------
 The author is now selectable when editing entries in the admin.
