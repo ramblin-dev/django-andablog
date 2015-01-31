@@ -70,11 +70,11 @@ You can install and use our make-style tool of choice if you don't want to worry
 
     On Linux (one time) from the cloned dir::
 
-        $ sudo pip install pynt
+        $ sudo pip install pynt pynt-of-django
 
     Or (one time) on windows::
 
-        $ pip install pynt
+        $ pip install pynt pynt-of-django
 
 Install Dependencies
 ~~~~~~~~~~~~~~~~~~~~
