@@ -13,7 +13,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
-    'Django>=1.6',
+    'Django>=1.6,<=1.7.1',
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'django-taggit>=0.12.2',
@@ -44,7 +44,7 @@ setup(
     zip_safe=False,
     keywords=['django-andablog', 'blog', 'django', 'app', 'reusable app', 'andablog'],
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
