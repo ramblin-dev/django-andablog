@@ -1,4 +1,5 @@
 pynt
+pynt-of-django
 sphinx
 sphinx_rtd_theme
 django-extensions
