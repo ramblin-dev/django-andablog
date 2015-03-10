@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='1.2.2',
+    version='1.3.0',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan Ven Osdel',

@@ -3,6 +3,11 @@
 History
 -------
 
+1.3.0 (2015-03-10)
+------------------
+Authors are now able to see 'draft' (unpublished) versions of their blog entries.
+Upgraded taggit to address an issue that was locking us to an older Django 1.7 version.
+
 1.2.2 (2014-12-04)
 ------------------
 Fixed a bug where the Django 1.7.x migration for recent DB changes was somehow missed.
