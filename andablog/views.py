@@ -26,4 +26,5 @@ class EntryDetail(DetailView):
     slug_field = 'slug'
 
     def get_queryset(self):
-        return super(EntryDetail, self).get_queryset().filter(is_published=True)
+        return super(EntryDetail, self).get_queryset().filter(
+            Q(is_published=True) | Q(author__isnull=False, author=self.request.user.id))

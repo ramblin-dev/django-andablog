@@ -87,3 +87,27 @@ class TestAuthorEntryListing(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(actual_slugs, expected_slugs)
         self.assertNumQueries(1)
+
+
+class TestAuthorEntryDetail(TestCase):
+    """An author looking at the entry detail"""
+
+    fixtures = ['three_users', 'three_profiles', 'three_published_entries']
+
+    def setUp(self):
+        self.an_entry = blogmodels.Entry.objects.get(slug='last-post')
+        self.an_entry.published_timestamp = None
+        self.an_entry.is_published = False
+        self.an_entry.save()
+
+        self.client.login(username='agent0014@example.com', password='secret')
+
+        self.url = reverse('andablog:entrydetail', args=[self.an_entry.slug])
+
+    def test_draft_detail(self):
+        """Our author should be able to view the draft entry."""
+        response = self.client.get(self.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.an_entry.slug, response.context['entry'].slug)
+        self.assertNumQueries(1)
