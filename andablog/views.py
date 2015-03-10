@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.views.generic import ListView, DetailView
 
 from . import models
@@ -12,8 +13,9 @@ class EntriesList(ListView):
     paginate_orphans = 5
 
     def get_queryset(self):
-        queryset = super(EntriesList, self).get_queryset().filter(is_published=True)
-        return queryset.order_by('-published_timestamp')
+        queryset = super(EntriesList, self).get_queryset().filter(
+            Q(is_published=True) | Q(author__isnull=False, author=self.request.user.id))
+        return queryset.order_by('is_published', '-published_timestamp')  # Put 'drafts' first.
 
 
 class EntryDetail(DetailView):
@@ -24,4 +26,5 @@ class EntryDetail(DetailView):
     slug_field = 'slug'
 
     def get_queryset(self):
-        return super(EntryDetail, self).get_queryset().filter(is_published=True)
+        return super(EntryDetail, self).get_queryset().filter(
+            Q(is_published=True) | Q(author__isnull=False, author=self.request.user.id))

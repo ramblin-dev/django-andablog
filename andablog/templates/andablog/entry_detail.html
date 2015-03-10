@@ -12,7 +12,7 @@
 
 {% block andablog_content %}
     <div class="blog-post">
-        <h2 class="blog-post-title">{{ entry.title }}</h2>
+        <h2 class="blog-post-title">{{ entry.title }}{% if not entry.is_published %} <span class="label label-default">Draft</span>{% endif %}</h2>
         <p class="blog-post-meta">{{ entry.published_timestamp|date:"DATE_FORMAT" }}{% if entry.author %} by {{ entry.author|authordisplay }}{% endif %}</p>
         <p>
             {{ entry.content }}
