@@ -11,6 +11,7 @@ If you are adventurous (or we are just slow) you can get the latest code directl
     pip install -e git+https://github.com/WimpyAnalytics/django-andablog.git#egg=django-andablog
 
 The master branch can generally be considered bug free though newer features may be a little half baked.
+For more information `see the official Python package installation tutorial <https://packaging.python.org/en/latest/installing.html>`_.
 
 Django Settings
 ---------------
