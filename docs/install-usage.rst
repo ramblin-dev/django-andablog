@@ -109,8 +109,7 @@ Comments using Django comments framework
 
 .. note ::
 
-    Please note that it using Django's internal commenting is no longer recommended by Django community.
-
+    Please note that using Django's internal commenting is no longer recommended by Django community.
 
 The `comments count snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/andablog/templates/djangoandablog/comments_count_snippet.html>`_ is used to provide the necessary comment count. The `comments snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/andablog/templates/andablog/comments_snippet.html>`_ is for listing the comments below the entry.
 
