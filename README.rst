@@ -3,7 +3,17 @@ django-andablog
 
 |Build Status|
 
-(Just) A blog app for Django
+A minimal blog app for Django
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Andablog is a blogging application for `Django framework <http://djangoproject.com/>`_. Andablog comes with minimal dependencies, making it effortless to integrate to existing Django sites. It supports the latest Django and Python versions.
+
+-  `Full documentation <http://django-andablog.readthedocs.org/en/latest/>`__ 
+-  `Features <http://django-andablog.readthedocs.org/en/latest/#features>`__
+-  `Installation and usage <http://django-andablog.readthedocs.org/en/latest/install-usage.html>`__
+-  `Demo site <http://django-andablog.readthedocs.org/en/latest/demo-site.html>`__
+
+History
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What is the point of all this? When this project got started blogging
@@ -24,15 +34,7 @@ Andablog has a focus on integration-ease first and features second. So
 if the focus of your Django site is something else and you want to add a
 blog section to it you have come to the right place.
 
-Full
-`documentation <http://django-andablog.readthedocs.org/en/latest/>`__ is
-available but here are the highlights.
-
--  `Features <http://django-andablog.readthedocs.org/en/latest/#features>`__
--  `Installation &
-   Usage <http://django-andablog.readthedocs.org/en/latest/install-usage.html>`__
--  `Demo
-   Site <http://django-andablog.readthedocs.org/en/latest/demo-site.html>`__
-
 .. |Build Status| image:: https://travis-ci.org/WimpyAnalytics/django-andablog.svg?branch=master
    :target: https://travis-ci.org/WimpyAnalytics/django-andablog
+
+
