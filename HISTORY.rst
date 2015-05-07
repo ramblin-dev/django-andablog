@@ -3,6 +3,10 @@
 History
 -------
 
+1.4.0 (TBD)
+------------------
+
+
 1.3.0 (2015-03-10)
 ------------------
 Authors are now able to see 'draft' (unpublished) versions of their blog entries.
