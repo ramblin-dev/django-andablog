@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.views.generic import TemplateView
 from django.contrib import admin
 from django.conf.urls.static import static
@@ -15,7 +15,7 @@ sitemaps = {
     'blog': EntrySitemap,
 }
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'^accounts/', include('allauth.urls')),  # All Auth
     url(r'^blog/', include('blog.urls')),
@@ -25,10 +25,8 @@ urlpatterns = patterns('',
 
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r'^markitup/', include('markitup.urls')),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static media hosting in debug mode
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static media hosting in debug mode
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += patterns('',
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    )
+    urlpatterns.append(url(r'^__debug__/', include(debug_toolbar.urls)))

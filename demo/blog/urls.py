@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from .feeds import LatestBlogEntries
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^latest/entries/$', LatestBlogEntries(), name='blog-entry-feed'),
-    (r'^', include('andablog.urls', namespace='andablog')),
-)
+    url(r'^', include('andablog.urls', namespace='andablog')),
+]
