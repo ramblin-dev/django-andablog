@@ -84,10 +84,7 @@ THIRD_PARTY_APPS = (
     "taggit",   # Blog req: For tags
 )
 
-if DJANGO_VERSION >= (1, 7):
-    THIRD_PARTY_APPS += ('debug_toolbar.apps.DebugToolbarConfig',)
-else:
-    THIRD_PARTY_APPS += ('debug_toolbar', 'south')
+THIRD_PARTY_APPS += ('debug_toolbar.apps.DebugToolbarConfig',)
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
@@ -98,7 +95,7 @@ LOCAL_APPS = (
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 ########## END APP CONFIGURATION
 
 MIDDLEWARE_CLASSES = (
@@ -197,6 +194,3 @@ COMMENTS_APP = 'democomments'
 """ Markitup! Settings """
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
 MARKITUP_SET = 'markitup/sets/markdown'
-
-""" South Settings """
-SOUTH_TESTS_MIGRATE = False  # South doesn't seem to look for the south_migrations folder when tests are run.

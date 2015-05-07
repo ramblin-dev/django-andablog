@@ -75,7 +75,7 @@ The demo app has an `example of overriding andablog's base.html <https://github.
 Blog Entry Comments
 ^^^^^^^^^^^^^^^^^^^
 
-Andablog can use `Django's own comments framework <https://docs.djangoproject.com/en/1.7/ref/contrib/comments/>`_ or other pluggable commenting system.
+Andablog can use `contrib comments <https://docs.djangoproject.com/en/1.7/ref/contrib/comments/>`_ or any other pluggable commenting system (such as your own).
 
 To provide andablog with comments, override the following template snippets::
 
@@ -110,6 +110,7 @@ Comments using Django comments framework
 .. note ::
 
     Please note that using Django's internal commenting is no longer recommended by Django community.
+    Andablog uses it in the demo app to serve as an example of someone having their own custom comments system.
 
 The `comments count snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/andablog/templates/djangoandablog/comments_count_snippet.html>`_ is used to provide the necessary comment count. The `comments snippet <https://github.com/WimpyAnalytics/django-andablog/blob/master/andablog/templates/andablog/comments_snippet.html>`_ is for listing the comments below the entry.
 
