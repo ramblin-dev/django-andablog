@@ -6,7 +6,6 @@ django-extensions
 django-authtools
 django-allauth
 django-bootstrap-form
-git+git://github.com/django/django-contrib-comments.git@6ec2c9569a7cfff10a281b3c597e007aef920bfa
+django-contrib-comments
 django-debug-toolbar
 Markdown
-South

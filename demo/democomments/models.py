@@ -14,5 +14,6 @@ class DemoComment(dmodels.Comment):
 
     class Meta:
         proxy = True
+        app_label = 'democomments'
 
     objects = RelatedCommentManager()

@@ -3,6 +3,12 @@
 History
 -------
 
+1.4.0 (TBD)
+------------------
+Support for Django 1.7.x - Django 1.8.x
+ * Adds support for Django 1.8
+ * Drops support for Django 1.6 and therefore south_migrations
+
 1.3.0 (2015-03-10)
 ------------------
 Authors are now able to see 'draft' (unpublished) versions of their blog entries.
