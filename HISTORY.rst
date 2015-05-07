@@ -3,7 +3,7 @@
 History
 -------
 
-1.4.0 (TBD)
+1.4.0 (2015-05-07)
 ------------------
 Support for Django 1.7.x - Django 1.8.x
  * Adds support for Django 1.8
