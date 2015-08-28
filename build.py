@@ -9,12 +9,13 @@ from pynt import task
 from pyntofdjango.tasks import python, pip, clean, delete_venv, create_venv, recreate_venv, manage, test_tox, \
     runserver, dumpdata, migrate, docs, venv_bin
 from pyntofdjango import utils, project, paths
+from pyntcontrib import safe_cd
 
 
 @task()
 def test_venv():
     """Runs all tests on venv"""
-    with utils.safe_cd('demo'):
+    with safe_cd('demo'):
         project.execute_manage('test', 'andablog')
         project.execute_manage('test')
 
@@ -43,7 +44,7 @@ def rebuild_db():
 @task()
 def rundocserver():
     """Runs the sphinx-autobuild server"""
-    with utils.safe_cd('docs'):
+    with safe_cd('docs'):
         project.venv_execute('sphinx-autobuild', '.', '_build/html')
 
 
