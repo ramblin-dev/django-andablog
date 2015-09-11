@@ -108,7 +108,7 @@ Making changes
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
- Now you can make your changes locally. Make sure to periodically run the tests for the active Python and Django version::
+ Now you can make your changes locally and add yourself to AUTHORS.rst. Make sure to periodically run the tests for the active Python and Django version::
 
    $ pynt test_venv
 
