@@ -3,6 +3,12 @@
 History
 -------
 
+1.4.1 (2015-09-11)
+------------------
+Fixed a missing migration bug
+ * Thanks bradmontgomery for the report and fix.
+ * CI tests now include a missing migration check.
+
 1.4.0 (2015-05-07)
 ------------------
 Support for Django 1.7.x - Django 1.8.x
