@@ -26,7 +26,7 @@ class Entry(TimeStampedModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True)
     tags = TaggableManager(blank=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     class Meta:
@@ -63,7 +63,7 @@ class EntryImage(TimeStampedModel):
         return self.image.url
 
     def __unicode__(self):
-        return "{entry} - {image}".format(
+        return u"{entry} - {image}".format(
             entry=truncatechars(self.entry, 10),
             image=truncatechars(self.image.name, 10),
         )
