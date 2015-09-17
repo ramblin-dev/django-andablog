@@ -3,6 +3,11 @@
 History
 -------
 
+1.4.2 (2015-09-17)
+------------------
+Fixed unicode support for models
+ * Thanks Samuel Mendes for the report and fix.
+
 1.4.1 (2015-09-11)
 ------------------
 Fixed a missing migration bug
