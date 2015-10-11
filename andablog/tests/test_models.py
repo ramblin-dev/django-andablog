@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from django.test import TestCase
-from django.utils.text import slugify
 from django.utils import timezone
 
 from andablog import models
@@ -22,7 +21,30 @@ class TestEntryModel(TestCase):
 
     def test_slug_creation(self):
         """The slug field should automatically get set from the title during post creation"""
-        self.assertEqual(self.entry.slug, slugify(self.entry.title))
+        self.assertEqual(self.entry.slug, 'first-post')
+
+    def test_slug_creation_on_long_titles(self):
+        """The slug field should be limited to 50 chars even if the title is longer."""
+        self.entry.title = "Here's a really long title, for testing slug character restrictions"
+        self.entry.save()
+        self.assertEqual(self.entry.slug, 'heres-a-really-long-title-for-testing-slug-charact')
+
+    def test_long_slugs_should_not_end_with_a_dash(self):
+        """The slug should not end with a dash."""
+        self.entry.title = "Here's a really long title, for testing slug charac this gets excluded"
+        self.entry.save()
+        self.assertEqual(self.entry.slug, 'heres-a-really-long-title-for-testing-slug-charac')
+
+    def test_duplicate_long_slugs_should_get_a_timestamp(self):
+        """If a long title has a shortened slug that is a duplicate, it should have a timestamp"""
+        self.entry.title = "Here's a really long title, for testing slug character restrictions"
+        self.entry.save()
+
+        duplicate_entry = models.Entry.objects.create(title=self.entry.title, content=self.entry.content)
+
+        self.assertNotEqual(self.entry.slug, duplicate_entry.slug)
+        # This is not ideal, but a portion of the original slug is in the duplicate
+        self.assertIn(self.entry.slug[:25], duplicate_entry.slug)
 
     def test_new_duplicate(self):
         """The slug value should automatically be made unique if the slug is taken"""
