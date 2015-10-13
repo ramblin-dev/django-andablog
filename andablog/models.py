@@ -41,8 +41,10 @@ class Entry(TimeStampedModel):
         to any duplicate slugs.
 
         """
-        # Restrict slugs to 50 chars, and don't let them end in a dash.
-        self.slug = slugify(self.title)[:50].strip('-')
+        # Restrict slugs to 50 chars, but don't split mid-word
+        self.slug = slugify(self.title)
+        while len(self.slug) > 50:
+            self.slug = '-'.join(self.slug.split('-')[:-1])
 
         # Is the same slug as another entry?
         if Entry.objects.filter(slug=self.slug).exclude(id=self.id).exists():

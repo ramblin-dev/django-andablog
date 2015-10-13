@@ -28,13 +28,13 @@ class TestEntryModel(TestCase):
         """The slug field should be limited to 50 chars even if the title is longer."""
         self.entry.title = SafeText("Here's a really long title, for testing slug character restrictions")
         self.entry.save()
-        self.assertEqual(self.entry.slug, 'heres-a-really-long-title-for-testing-slug-charact')
+        self.assertEqual(self.entry.slug, 'heres-a-really-long-title-for-testing-slug')
 
-    def test_long_slugs_should_not_end_with_a_dash(self):
-        """The slug should not end with a dash."""
-        self.entry.title = SafeText("Here's a really long title, for testing slug charac this gets excluded")
+    def test_long_slugs_should_not_get_split_midword(self):
+        """The slug should not get split mid-word."""
+        self.entry.title = SafeText("Please tell me where everyone is getting their assumptions about me?")
         self.entry.save()
-        self.assertEqual(self.entry.slug, 'heres-a-really-long-title-for-testing-slug-charac')
+        self.assertEqual(self.entry.slug, 'please-tell-me-where-everyone-is-getting-their')
 
     def test_duplicate_long_slugs_should_get_a_timestamp(self):
         """If a long title has a shortened slug that is a duplicate, it should have a timestamp"""
