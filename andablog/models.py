@@ -35,6 +35,16 @@ class Entry(TimeStampedModel):
     def get_absolute_url(self):
         return reverse('andablog:entrydetail', args=[self.slug])
 
+    def _insert_timestamp(self, value, max_length=50):
+        """Appends a timestamp integer to the given value, yet ensuring the
+        result is less than the specified max_length.
+        """
+        timestamp = str(int(time.time()))
+        value = "{}-{}".format(value, timestamp)
+        if len(value) > max_length:
+            value = '-'.join([value[:-len(timestamp)], timestamp])
+        return value
+
     def _slugify_title(self):
         """Slugify the Entry title, but ensure it's less than 50 characters.
         This method also ensures that a slug is unique by appending a timestamp
@@ -49,11 +59,7 @@ class Entry(TimeStampedModel):
         # Is the same slug as another entry?
         if Entry.objects.filter(slug=self.slug).exclude(id=self.id).exists():
             # Append time to differentiate, but keep total length < 50 chars.
-            timestamp = str(int(time.time()))
-            slug = "{}-{}".format(self.slug, timestamp)
-            if len(slug) > 50:
-                slug = '-'.join([self.slug[:-len(timestamp)], timestamp])
-            self.slug = slug
+            self.slug = self._insert_timestamp(self.slug, max_length=50)
 
     def save(self, *args, **kwargs):
         self._slugify_title()
