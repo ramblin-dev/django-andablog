@@ -24,17 +24,23 @@ class TestEntryModel(TestCase):
         """The slug field should automatically get set from the title during post creation"""
         self.assertEqual(self.entry.slug, 'first-post')
 
-    def test_slug_creation_on_long_titles(self):
-        """The slug field should be limited to 50 chars even if the title is longer."""
-        self.entry.title = SafeText("Here's a really long title, for testing slug character restrictions")
-        self.entry.save()
-        self.assertEqual(self.entry.slug, 'heres-a-really-long-title-for-testing-slug')
+    def test__insert_timestamp(self):
+        """Ensure the returned value contains a timestamp without going over the max length"""
+        # When given the `first-post` slug.
+        result = self.entry._insert_timestamp(self.entry.slug)
+        self.assertEqual(len(result.split('-')), 3)
+
+        # When given a string > 255 characters.
+        slug = '-'.join(['a'] * 250)
+        result = self.entry._insert_timestamp(slug)
+        self.assertLess(len(result), 255)
 
     def test_long_slugs_should_not_get_split_midword(self):
         """The slug should not get split mid-word."""
-        self.entry.title = SafeText("Please tell me where everyone is getting their assumptions about me?")
+        self.entry.title = SafeText("Please tell me where everyone is getting their assumptions about me?" * 100)
         self.entry.save()
-        self.assertEqual(self.entry.slug, 'please-tell-me-where-everyone-is-getting-their')
+        # The ending should not be a split word.
+        self.assertEqual(self.entry.slug[-25:], 'everyone-is-getting-their')
 
     def test_duplicate_long_slugs_should_get_a_timestamp(self):
         """If a long title has a shortened slug that is a duplicate, it should have a timestamp"""
