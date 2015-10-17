@@ -18,8 +18,8 @@ class Entry(TimeStampedModel):
     Represents a blog Entry.
     Uses TimeStampModel to provide created and modified fields
     """
-    title = models.CharField(max_length=500)
-    slug = models.SlugField(unique=True, editable=False)
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, editable=False)
     content = MarkupField()
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
