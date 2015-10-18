@@ -5,8 +5,7 @@ History
 
 2.0.0 (2015-10-18)
 ------------------
-Adds support for titles and slugs up to 255 characters in length.
-**Major: Migration will auto-truncate existing titles that are > 255 characters**
+Adds support for titles and slugs up to 255 characters in length. **Major: Migration will auto-truncate existing titles that are > 255 characters**
  * Thanks Federico (fedejaure) for the fork that inspired the change.
  * Thanks Brad Montgomery for design input, fix and feature change.
 
