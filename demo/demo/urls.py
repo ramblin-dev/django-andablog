@@ -3,6 +3,7 @@ from django.conf.urls import include, url
 from django.views.generic import TemplateView
 from django.contrib import admin
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
 
 from andablog.sitemaps import EntrySitemap
 
@@ -23,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comments/', include('django_comments.urls')),
 
-    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}),
     url(r'^markitup/', include('markitup.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Static media hosting in debug mode
 
