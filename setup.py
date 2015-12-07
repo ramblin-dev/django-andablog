@@ -13,7 +13,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
-    'Django>=1.7,<1.9',
+    'Django>=1.8,<1.10',
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'django-taggit>=0.14.0',
@@ -49,11 +49,11 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Framework :: Django',
-        'Framework :: Django :: 1.7',
         'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.9',
     ],
     test_suite='tests',
     tests_require=test_requirements,

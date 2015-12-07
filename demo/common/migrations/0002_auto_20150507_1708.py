@@ -13,7 +13,7 @@ def get_operations():
     Our demo site is a unusual in that we want to run it's tests (for integration testing) in multiple Django versions.
     Typical sites don't have to worry about that sort of thing.
     """
-    compatible = (1, 8) <= DJANGO_VERSION < (1, 9)
+    compatible = (1, 8) <= DJANGO_VERSION < (1, 10)
     if not compatible:
         return []
 
