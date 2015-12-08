@@ -47,8 +47,6 @@ class DemoComment(BaseCommentAbstractModel):
                                                  'be displayed instead.'))
 
     class Meta:
-        db_table = "django_comments"
-        app_label = 'democomments'
         ordering = ('submit_date',)
         permissions = [("can_moderate", "Can moderate comments")]
         verbose_name = _('comment')
