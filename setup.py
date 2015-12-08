@@ -13,7 +13,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
-    'Django>=1.8,<=1.9',
+    'Django>=1.8,<1.10',
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'django-taggit>=0.14.0',
@@ -26,13 +26,13 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='2.0.0',
+    version='2.1.0',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan Ven Osdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
-    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/2.0.0',
+    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/2.1.0',
     packages=[
         'andablog',
     ],
