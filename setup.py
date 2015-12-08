@@ -13,7 +13,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
-    'Django>=1.8,<1.10',
+    'Django>=1.8,<=1.9',
     'django-model-utils>=2.2',
     'django-markitup>=2.2.2',
     'django-taggit>=0.14.0',

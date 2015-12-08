@@ -21,6 +21,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
         changed = set()
+        ignore_list = ['authtools']  # dependencies that we don't care about migrations for (usually for testing only)
 
         self.stdout.write("Checking...")
         for db in settings.DATABASES.keys():
@@ -36,6 +37,10 @@ class Command(BaseCommand):
             )
 
             changed.update(autodetector.changes(graph=executor.loader.graph).keys())
+
+        for ignore in ignore_list:
+            if ignore in changed:
+                changed.remove(ignore)
 
         if changed:
             sys.exit("Apps with model changes but no corresponding migration file: %(changed)s\n" % {
