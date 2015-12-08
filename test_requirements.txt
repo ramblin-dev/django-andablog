@@ -1,11 +1,9 @@
-pynt
-pynt-of-django
 sphinx
 sphinx_rtd_theme
 django-extensions
-django-authtools
 django-allauth>=0.23.0
 django-bootstrap-form
-django-contrib-comments
+-e git://github.com/django/django-contrib-comments.git@8091284e028d97612301e536d70b7ffee1bc4745#egg=django_comments
+-e git://github.com/jproffitt/django-authtools.git@ad9a1996231f573205796b020b94b63d981a85fb#egg=django_authtools
 django-debug-toolbar
 Markdown
