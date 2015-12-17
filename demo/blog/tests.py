@@ -7,6 +7,7 @@ testing the integration points of the chosen blog engine. E.g.
 """
 from django.core.urlresolvers import reverse
 from django.test import TestCase
+from django.forms import ModelForm
 
 from andablog import models as blogmodels
 
@@ -111,3 +112,35 @@ class TestAuthorEntryDetail(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.an_entry.slug, response.context['entry'].slug)
         self.assertNumQueries(1)
+
+
+class TestEntryEditing(TestCase):
+
+    fixtures = ['three_users', 'three_profiles', 'admin_user', 'three_published_entries']
+
+    def setUp(self):
+        self.an_entry = blogmodels.Entry.objects.get(slug='last-post')
+
+        class EntryForm(ModelForm):
+            class Meta:
+                model = blogmodels.Entry
+                fields = ['title', 'content', 'is_published']
+
+        self.form_cls = EntryForm
+
+    def test_form_editing(self):
+        """Should be able to properly edit an entry within a model form"""
+        update = {
+            'title': 'Last Post (Final)',
+            'content': '### Goodbye!',
+            'is_published': True,
+        }
+
+        form = self.form_cls(update, instance=self.an_entry)
+
+        form.save()
+
+        actual = blogmodels.Entry.objects.get(pk=self.an_entry.pk)
+        self.assertEquals(actual.title, update['title'])
+        self.assertEquals(actual.content.raw, update['content'])
+        self.assertIsNotNone(actual.published_timestamp)
