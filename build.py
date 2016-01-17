@@ -46,9 +46,3 @@ def rundocserver():
     """Runs the sphinx-autobuild server"""
     with safe_cd('docs'):
         project.venv_execute('sphinx-autobuild', '.', '_build/html')
-
-
-@task()
-def readme_rst():
-    """Update README.rst from README.md"""
-    project.execute_python('readme_rst.py')
