@@ -111,3 +111,4 @@ class TestAuthorEntryDetail(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(self.an_entry.slug, response.context['entry'].slug)
         self.assertNumQueries(1)
+

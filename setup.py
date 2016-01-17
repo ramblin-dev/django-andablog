@@ -15,7 +15,7 @@ requirements = [
     'six',
     'Django>=1.8,<1.10',
     'django-model-utils>=2.2',
-    'django-markitup>=2.2.2',
+    'django-markitup>=2.3.0',
     'django-taggit>=0.14.0',
     'pillow>=2.6.1',
 ]
