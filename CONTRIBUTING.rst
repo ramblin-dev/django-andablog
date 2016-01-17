@@ -145,8 +145,6 @@ Before you submit a pull request, check that it meets these guidelines:
    https://travis-ci.org/WimpyAnalytics/django-andablog/pull_requests
    and make sure that the tests pass for all configurations.
 
-.. note:: If you want to update the README, please update the rst as well. One of the project's pynt commands can generate the README.rst from the .md for you.
-
 Tips
 ----
 
