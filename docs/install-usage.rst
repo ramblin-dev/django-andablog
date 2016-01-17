@@ -42,7 +42,7 @@ Django Settings
 
         """ A python-markdown example that allows HTML in the entry content """
         MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
-        MARKITUP_SET = 'markitup/sets/markdown'
+        MARKITUP_SET = 'markitup/sets/markdown/'
 
     For Textile, add the appropriate `Markitup! settings <https://pypi.python.org/pypi/django-markitup>`_ to your settings.py::
 
@@ -157,7 +157,7 @@ weren't up to date enough to package within Andablog.
 Package Dependencies
 --------------------
 * Python 3.4, 3.3 or 2.7
-* Django 1.6 or 1.7
+* Django 1.7 or 1.8
 * six
 * django-model-utils
 * django-markitup
@@ -166,8 +166,6 @@ Package Dependencies
 
 Optional Dependencies
 ---------------------
-
-* South, if your site uses Django 1.6
 
 * `A Markitup compatible filter package <https://pypi.python.org/pypi/django-markitup#the-markitup-filter-setting>`_ such as Markdown or Textile to have HTML markup in your blog posts
 
