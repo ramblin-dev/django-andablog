@@ -3,13 +3,17 @@
 History
 -------
 
+2.2.0 (2016-09-17)
+------------------
+Django 1.10 support, drops Django 1.8 support
+
 2.1.1 (2016-01-17)
 ------------------
 Fixes an issue with saving entries in Django 1.9 caused by a previously faulty version of django-markitup.
 
 2.1.0 (2015-12-07)
 ------------------
-Django 1.9 support
+Django 1.9 support, drops Django 1.7 support
 
 2.0.0 (2015-10-18)
 ------------------
