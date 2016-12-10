@@ -64,7 +64,11 @@ To use the pages provided by andablog add something like this to your site's URL
 
     (r'^blog/', include('andablog.urls', namespace='andablog')),
 
-Then override andablog's base template to inherit from your site's base.html.
+Then modify your site's navbar to link to the blog listing. E.g.
+
+    <li><a href="{% url 'andablog:entrylist' %}">Blog</a></li>
+
+Finally, override andablog's base template to inherit from your site's base.html.
 
     andablog/base.html
 
