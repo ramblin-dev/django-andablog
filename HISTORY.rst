@@ -5,7 +5,7 @@ History
 
 2.4.0 (2017-06-09)
 ------------------
-New "entry preview" feature: Optional preview_content (markdown) and preview_image fields for direct control of appearance of item in listing.
+New feature: Optional preview_content (markdown) and preview_image fields for direct control of appearance of item in listing.
 
 2.3.0 (2017-06-09)
 ------------------
