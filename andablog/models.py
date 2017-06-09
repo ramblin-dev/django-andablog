@@ -25,6 +25,8 @@ class Entry(TimeStampedModel):
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True)
     tags = TaggableManager(blank=True)
+    preview_content = MarkupField(blank=True)
+    preview_image = models.ImageField(blank=True, upload_to='andablog/images')
 
     def __unicode__(self):
         return self.title
