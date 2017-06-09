@@ -6,7 +6,7 @@ install:
 script:
   - tox -e $TOXENV
 env:
-  - TOXENV=py34-dj1.9
-  - TOXENV=py27-dj1.9
+  - TOXENV=py35-dj1.11
+  - TOXENV=py27-dj1.11
   - TOXENV=py34-dj1.10
   - TOXENV=py27-dj1.10
