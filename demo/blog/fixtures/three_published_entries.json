@@ -7,6 +7,9 @@
         "published_timestamp": "2014-10-11T13:00:48.994Z",
         "modified": "2014-11-03T21:32:18.659Z",
         "content": "Sorry it has been a long time since my last post. I have been really busy watching TV, playing video games and drinking beer. ![busy worm](/media/andablog/images/inchworm.png \"busy worm\")",
+        "preview_content": "A post full of excuses. Helpful for me (the author) but not you (the reader). Thanks!",
+        "preview_image": "",
+        "_preview_content_rendered": "<p>A post full of excuses. Helpful for me (the author) but not you (the reader). Thanks!</p>",
         "_content_rendered": "<p>Sorry it has been a long time since my last post. I have been really busy watching TV, playing video games and drinking beer. <img alt=\"busy worm\" src=\"/media/andablog/images/inchworm.png\" title=\"busy worm\" /></p>",
         "slug": "busy-busy",
         "is_published": true
@@ -38,6 +41,9 @@
         "modified": "2014-11-03T21:40:33.922Z",
         "content": "Hey everyone, I have recently received a heart felt letter from a Nigerian prince. \r\n\r\n![crown](/media/andablog/images/crown.png \"crown\")\r\n\r\nThe letter contained a plea for monetary help in claiming his late father's throne from his estranged brother. Included was a promise that I will receive a large amount of money in thanks once the throne is secure. Not only did I immediately send him the required funds but I have also decided to liquidate my assets in order to travel to Nigeria so that I may personally assist with the succession.\r\n\r\n![Rich and struting](/media/andablog/images/rich_strut.png \"Rich and struting\")\r\n\r\nAs a result, I fear I won't have time for this blog any more. I wish you all the best of luck. ",
         "_content_rendered": "<p>Hey everyone, I have recently received a heart felt letter from a Nigerian prince. </p>\n<p><img alt=\"crown\" src=\"/media/andablog/images/crown.png\" title=\"crown\" /></p>\n<p>The letter contained a plea for monetary help in claiming his late father's throne from his estranged brother. Included was a promise that I will receive a large amount of money in thanks once the throne is secure. Not only did I immediately send him the required funds but I have also decided to liquidate my assets in order to travel to Nigeria so that I may personally assist with the succession.</p>\n<p><img alt=\"Rich and struting\" src=\"/media/andablog/images/rich_strut.png\" title=\"Rich and struting\" /></p>\n<p>As a result, I fear I won't have time for this blog any more. I wish you all the best of luck. </p>",
+        "preview_content": "A story of a neglected work of art and a new fortune discovered. Inside you will find:\r\n\r\n- A new opportunity\r\n- A farewell",
+        "preview_image": "andablog/images/SendOff-300px.png",
+        "_preview_content_rendered": "<p>A story of a neglected work of art and a new fortune discovered. Inside you will find:</p>\n<ul>\n<li>A new opportunity</li>\n<li>A farewell</li>\n</ul>",
         "slug": "last-post",
         "is_published": true
     },

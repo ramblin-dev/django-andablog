@@ -3,6 +3,10 @@
 History
 -------
 
+2.4.0 (2017-06-09)
+------------------
+New feature: Optional preview_content (markdown) and preview_image fields for direct control of appearance of item in listing.
+
 2.3.0 (2017-06-09)
 ------------------
 Django 1.11 support, drops Django 1.9 support
