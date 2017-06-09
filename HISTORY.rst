@@ -3,6 +3,10 @@
 History
 -------
 
+2.3.0 (2017-06-09)
+------------------
+Django 1.11 support, drops Django 1.9 support
+
 2.2.0 (2016-09-17)
 ------------------
 Django 1.10 support, drops Django 1.8 support
