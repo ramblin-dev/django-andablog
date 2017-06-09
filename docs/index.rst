@@ -26,12 +26,12 @@ This list will likely grow slowly. Priorities are Bug Fixes > Django Release Com
 * Template block names are prefixed as to not conflict with the those used by the site.
 * A URL hierarchy to include at /blog (or wherever)
 * A Django sitemaps EntrySitemap class
+* Preview content/image fields for entry for tighter control of how a blog entry looks in a listing w/fallback to truncation.
 * A base class for an entries feed
 * Utilizing a site-provided profile page as the author profile page
 * Easy comment integration. Simply override a template snippet
 * Support for custom User Models
 * Django migrations
-* South migrations (Until we drop Django 1.6)
 * Class based generic views that can be used directly
 * A demo application.
 * Django upgrade friendly: Most recently released major Django version and 1 back

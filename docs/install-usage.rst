@@ -160,8 +160,8 @@ weren't up to date enough to package within Andablog.
 
 Package Dependencies
 --------------------
-* Python 3.4, 3.3 or 2.7
-* Django 1.7 or 1.8
+* Python 3.5 or 2.7
+* Django: Current and previous release
 * six
 * django-model-utils
 * django-markitup
