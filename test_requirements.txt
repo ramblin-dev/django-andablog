@@ -3,7 +3,7 @@ sphinx_rtd_theme
 django-extensions
 django-allauth>=0.23.0
 django-bootstrap-form>=3.3,<3.4
--e git://github.com/django/django-contrib-comments.git@8091284e028d97612301e536d70b7ffee1bc4745#egg=django_comments
+django-contrib-comments
 django-authtools
 django-debug-toolbar
 Markdown
