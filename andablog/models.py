@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.template.defaultfilters import truncatechars
 from django.utils.text import slugify
@@ -23,7 +23,7 @@ class Entry(TimeStampedModel):
     content = MarkupField()
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True, on_delete=models.CASCADE)
     tags = TaggableManager(blank=True)
     preview_content = MarkupField(blank=True)
     preview_image = models.ImageField(blank=True, upload_to='andablog/images')
@@ -76,7 +76,7 @@ class Entry(TimeStampedModel):
 
 
 class EntryImage(TimeStampedModel):
-    entry = models.ForeignKey(Entry)
+    entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
     image = models.ImageField(blank=True, upload_to='andablog/images')
 
     @property

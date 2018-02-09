@@ -26,7 +26,7 @@ class DemoComment(BaseCommentAbstractModel):
     # user; otherwise at least user_name should have been set and the comment
     # was posted by a non-authenticated user.
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('user'),
-                             blank=True, null=True, related_name="%(class)s_comments")
+                             blank=True, null=True, related_name="%(class)s_comments", on_delete=models.CASCADE)
     user_name = models.CharField(_("user's name"), max_length=50, blank=True)
     # Explicit `max_length` to apply both to Django 1.7 and 1.8+.
     user_email = models.EmailField(_("user's email address"), max_length=254,

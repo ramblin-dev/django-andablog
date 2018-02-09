@@ -2,7 +2,7 @@ sphinx
 sphinx_rtd_theme
 django-extensions
 django-allauth>=0.23.0
--e git://github.com/tzangms/django-bootstrap-form.git@5fff56f715bd9f2f29793f6a5a87baa1be25e409#egg=django_bootstrap_form
+django-bootstrap-form>=3.3,<3.4
 -e git://github.com/django/django-contrib-comments.git@8091284e028d97612301e536d70b7ffee1bc4745#egg=django_comments
 django-authtools
 django-debug-toolbar

@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),  # All Auth
     url(r'^blog/', include('blog.urls')),
     url(r'^profile/', include('profiles.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^comments/', include('django_comments.urls')),
 
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}),

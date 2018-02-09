@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import six
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import truncatewords
 from django.test import TestCase
 

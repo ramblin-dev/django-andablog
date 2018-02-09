@@ -1,5 +1,5 @@
 import six
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.conf import settings
 from model_utils.models import TimeStampedModel
@@ -7,7 +7,7 @@ from model_utils.models import TimeStampedModel
 
 class UserProfile(TimeStampedModel):
 
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     greatest_fear = models.CharField(
         blank=True,
         null=True,
