@@ -6,26 +6,10 @@ MODULE_PATH = os.path.abspath(__file__)
 pyntofdjango.setup_pod(MODULE_PATH)
 
 from pynt import task
-from pyntofdjango.tasks import python, pip, clean, delete_venv, manage, test_tox, \
+from pyntofdjango.tasks import python, pip, clean, delete_venv, create_venv, recreate_venv, manage, test_tox, \
     runserver, dumpdata, migrate, docs, venv_bin
 from pyntofdjango import utils, project, paths
 from pyntcontrib import safe_cd
-
-
-@task()
-def create_venv():
-    """Create virtualenv w/requirements. Specify y/n for local/test/general to control installation."""
-    if not os.path.isdir(project.project_paths.venv):
-        project.execute('virtualenv', '--distribute', '--no-site-packages', project.project_paths.venv)
-        project.execute_python('-m', 'easy_install', 'pip')
-    project.execute_pip('install', '-r', project.project_paths.local_requirements)
-
-
-@task()
-def recreate_venv():
-    """Deletes and re creates virtualenv"""
-    delete_venv()
-    create_venv()
 
 
 @task()

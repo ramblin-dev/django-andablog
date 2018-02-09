@@ -23,7 +23,7 @@ class Entry(TimeStampedModel):
     content = MarkupField()
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True)
     tags = TaggableManager(blank=True)
     preview_content = MarkupField(blank=True)
     preview_image = models.ImageField(blank=True, upload_to='andablog/images')
@@ -76,7 +76,7 @@ class Entry(TimeStampedModel):
 
 
 class EntryImage(TimeStampedModel):
-    entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
+    entry = models.ForeignKey(Entry)
     image = models.ImageField(blank=True, upload_to='andablog/images')
 
     @property
