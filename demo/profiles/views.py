@@ -12,6 +12,6 @@ class UserProfileDetail(DetailView):
 
 
 def profile_redirect(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         url = reverse('profile-detail', args=[str(request.user.slug)])
         return HttpResponseRedirect(url)
