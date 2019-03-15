@@ -27,7 +27,6 @@ Django Settings
     INSTALLED_APPS = (
         # ... other applications,
         'andablog',
-        'markitup',  # For entry content
         'taggit',  # For entry tags
         'south',   # Only if your site is on Django 1.6
     )
@@ -38,21 +37,7 @@ Django Settings
 
 4. (Optional) Configure andablog to use a markup syntax for blog entries.
 
-    For Markdown, install the Markdown pypi package and add the appropriate `Markitup! settings <https://pypi.python.org/pypi/django-markitup>`_ to your settings.py::
-
-        """ A python-markdown example that allows HTML in the entry content """
-        MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
-        MARKITUP_SET = 'markitup/sets/markdown/'
-
-    For Textile, add the appropriate `Markitup! settings <https://pypi.python.org/pypi/django-markitup>`_ to your settings.py::
-
-        """ An example using Django's textile package """
-        MARKITUP_FILTER = ('django.contrib.markup.templatetags.markup.textile', {})
-
-    To enable a live preview, add the `Markitup! urls <https://pypi.python.org/pypi/django-markitup#installation>`_ to your site's URL hierarchy. Something like this::
-
-        url(r'^markitup/', include('markitup.urls')),
-
+    For Markdown, install the Markdown pypi package and add the appropriate `Markupfield! settings <https://pypi.org/project/django-markupfield/>`_ to your settings.py::
 
 Integrating Andablog into a Site
 --------------------------------
@@ -164,12 +149,6 @@ Package Dependencies
 * Django: Current and previous release
 * six
 * django-model-utils
-* django-markitup
+* django-markupfield
 * django-taggit
 * Pillow
-
-Optional Dependencies
----------------------
-
-* `A Markitup compatible filter package <https://pypi.python.org/pypi/django-markitup#the-markitup-filter-setting>`_ such as Markdown or Textile to have HTML markup in your blog posts
-

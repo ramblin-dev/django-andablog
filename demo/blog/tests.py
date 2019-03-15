@@ -5,7 +5,7 @@ testing the integration points of the chosen blog engine. E.g.
  * Are we including the blog data into the sitemap?
  * Are we exposing a blog feed?
 """
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.test import TestCase
 
 from andablog import models as blogmodels

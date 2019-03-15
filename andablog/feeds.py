@@ -1,5 +1,5 @@
 from django.contrib.syndication.views import Feed
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import truncatewords_html
 
 from .models import Entry

@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import markitup.fields
+from markupfield.fields import MarkupField
 
 
 class Migration(migrations.Migration):
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='entry',
             name='preview_content',
-            field=markitup.fields.MarkupField(blank=True, no_rendered_field=True),
+            field=MarkupField(blank=True, default_markup_type='markdown'),
         ),
         migrations.AddField(
             model_name='entry',

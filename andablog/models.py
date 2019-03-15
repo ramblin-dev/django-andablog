@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 import time
 
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.template.defaultfilters import truncatechars
 from django.utils.text import slugify
 from django.utils import timezone
 from django.conf import settings
 
-from markitup.fields import MarkupField
+from markupfield.fields import MarkupField
 from model_utils.models import TimeStampedModel
 from taggit.managers import TaggableManager
 
@@ -20,12 +20,12 @@ class Entry(TimeStampedModel):
     """
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, editable=False)
-    content = MarkupField()
+    content = MarkupField(default_markup_type='markdown')
     is_published = models.BooleanField(default=False)
     published_timestamp = models.DateTimeField(blank=True, null=True, editable=False)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, editable=True, on_delete=models.CASCADE)
     tags = TaggableManager(blank=True)
-    preview_content = MarkupField(blank=True)
+    preview_content = MarkupField(blank=True, default_markup_type='markdown')
     preview_image = models.ImageField(blank=True, upload_to='andablog/images')
 
     def __unicode__(self):
@@ -76,7 +76,7 @@ class Entry(TimeStampedModel):
 
 
 class EntryImage(TimeStampedModel):
-    entry = models.ForeignKey(Entry)
+    entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
     image = models.ImageField(blank=True, upload_to='andablog/images')
 
     @property

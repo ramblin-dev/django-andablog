@@ -5,8 +5,8 @@ Django and a Blog
 A blog app that is only intended to embed within an existing Django site.
 
 * Free software: BSD license `(source) <https://github.com/WimpyAnalytics/django-andablog>`_
-* Compatible with Django 1.7 and 1.8
-* Compatible with Python 3.4, 3.3 and 2.7
+* Compatible with 2 most recent Django versions (see history to confirm if we are keeping up)
+* Compatible with Python 3.x and 2.7
 
 Getting Started
 ---------------
@@ -21,7 +21,7 @@ Features
 This list will likely grow slowly. Priorities are Bug Fixes > Django Release Compatibility > Bad Jokes > Features.
 
 * Blog administration through Django admin
-* Markdown, Textile or plain text support through django-markitup
+* Markdown, RST or plain text support through django-markupfield
 * Blog Entry tag management through django-taggit.
 * Template block names are prefixed as to not conflict with the those used by the site.
 * A URL hierarchy to include at /blog (or wherever)

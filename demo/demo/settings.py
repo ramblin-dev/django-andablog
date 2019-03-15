@@ -50,7 +50,6 @@ TEMPLATES = [
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
-                'django.template.loaders.eggs.Loader',
             ]
         },
     },
@@ -81,7 +80,6 @@ THIRD_PARTY_APPS = (
     'django_extensions',  # Misc Tools, we use it for the handy sql reset
     'django_comments',  # Replacement for Django contrib comments
     'bootstrapform',  # Required for bootstrap templates
-    'markitup',  # Blog req: For markdown editing
     "taggit",   # Blog req: For tags
 )
 
@@ -99,7 +97,7 @@ LOCAL_APPS = (
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 ########## END APP CONFIGURATION
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -192,7 +190,3 @@ SITE_ID = 1
 
 """ Comments Configuration """
 COMMENTS_APP = 'democomments'
-
-""" Markitup! Settings """
-MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False})
-MARKITUP_SET = 'markitup/sets/markdown'
