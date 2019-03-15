@@ -3,6 +3,15 @@
 History
 -------
 
+3.0.0rc1 (2019-03-15)
+---------------------
+Django 2.0 support, drops Django 1.10 support.
+ * Drops use of the, no longer maintained, django-markitup dependency in favor of django-markupfield.
+ * Database migrations support the conversion of all entry content and previews.
+ * Removes live preview in admin. See the django-markupfield project for additional usage.
+ * Maintains markdown support. Removes Textile support in favor of RST.
+   **If you previously used Textile you will have to write your own migration.** See the django-markupfield docs for assistance in this.
+
 2.4.0 (2017-06-09)
 ------------------
 New feature: Optional preview_content (markdown) and preview_image fields for direct control of appearance of item in listing.
