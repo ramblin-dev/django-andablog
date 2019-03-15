@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import markitup.fields
+from markupfield.fields import MarkupField
 import model_utils.fields
 import django.utils.timezone
 from django.conf import settings
@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 ('modified', model_utils.fields.AutoLastModifiedField(default=django.utils.timezone.now, verbose_name='modified', editable=False)),
                 ('title', models.CharField(max_length=500)),
                 ('slug', models.SlugField(unique=True, editable=False)),
-                ('content', markitup.fields.MarkupField(no_rendered_field=True)),
+                ('content', MarkupField(default_markup_type='markdown')),
                 ('is_published', models.BooleanField(default=False)),
                 ('published_timestamp', models.DateTimeField(null=True, editable=False, blank=True)),
                 ('_content_rendered', models.TextField(editable=False, blank=True)),
