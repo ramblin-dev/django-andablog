@@ -3,8 +3,8 @@
 History
 -------
 
-3.0.0rc1 (2019-03-15)
----------------------
+3.0.0 (2019-03-15)
+------------------
 Django 2.0 support, drops Django 1.10 support.
  * Drops use of the, no longer maintained, django-markitup dependency in favor of django-markupfield.
  * Database migrations support the conversion of all entry content and previews.
