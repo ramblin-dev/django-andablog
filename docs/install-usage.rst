@@ -37,7 +37,7 @@ Django Settings
 
 4. (Optional) Configure andablog to use a markup syntax for blog entries.
 
-    For Markdown, install the Markdown pypi package and add the appropriate `Markupfield! settings <https://pypi.org/project/django-markupfield/>`_ to your settings.py::
+    For Markdown, install the Markdown pypi package and add the appropriate `Markupfield! settings <https://pypi.org/project/django-markupfield/>`_ to your settings.py
 
 Integrating Andablog into a Site
 --------------------------------
