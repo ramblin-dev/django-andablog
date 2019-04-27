@@ -3,6 +3,10 @@
 History
 -------
 
+3.1.0rc1
+--------
+Django 2.1 support, drops Django 1.11 support.
+
 3.0.0 (2019-03-15)
 ------------------
 Django 2.0 support, drops Django 1.10 support.
