@@ -23,13 +23,13 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='3.1.0rc1',
+    version='3.1.0',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan VenOsdel',
     author_email='ivan@wimpyanalytics.com',
     url='https://github.com/WimpyAnalytics/django-andablog',
-    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/3.1.0rc1',
+    download_url='https://github.com/wimpyanalytics/django-andablog/tarball/3.1.0',
     packages=[
         'andablog',
     ],
@@ -45,7 +45,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3 :: Only',
         'Framework :: Django',
     ],
     test_suite='tests',
