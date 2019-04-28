@@ -5,7 +5,7 @@ History
 
 3.1.0rc1
 --------
-Django 2.1 support, drops Django 1.11 support.
+Django 2.1 support, drops Django 1.11 (along with Python2.7) support
 
 3.0.0 (2019-03-15)
 ------------------

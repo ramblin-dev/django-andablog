@@ -2,10 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 
 readme = open('README.rst').read()
@@ -13,7 +10,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
-    'Django>=2,<2.2',
+    'Django>=2.0,<2.2',
     'django-model-utils>=3.0,<4.0',
     'django-markupfield>=1.5,<2',
     'django-taggit>=0.22.2,<1.0.0',
@@ -48,12 +45,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3',
         'Framework :: Django',
-        'Framework :: Django :: 1.8',
-        'Framework :: Django :: 1.9',
     ],
     test_suite='tests',
     tests_require=test_requirements,
