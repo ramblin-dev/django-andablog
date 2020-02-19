@@ -10,11 +10,11 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
     'six',
-    'Django>=2.0,<2.2',
-    'django-model-utils>=3.0,<4.0',
-    'django-markupfield>=1.5,<2',
-    'django-taggit>=0.22.2,<1.0.0',
-    'pillow>=4.0.0,<5.0.0',
+    'Django>=2.0,<2.3',
+    'django-model-utils>=3.0,<5.0',
+    'django-markupfield>=1.5,<3',
+    'django-taggit>=0.22.2,<2.0.0',
+    'pillow>=4.0.0,<8.0.0',
 ]
 
 test_requirements = [
@@ -23,7 +23,7 @@ test_requirements = [
 
 setup(
     name='django-andablog',
-    version='3.1.0',
+    version='3.2.0',
     description='A blog app that is only intended to be embedded within an existing Django site.',
     long_description=readme + '\n\n' + history,
     author='Ivan VenOsdel',
