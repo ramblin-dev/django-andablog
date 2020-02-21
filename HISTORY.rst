@@ -3,6 +3,10 @@
 History
 -------
 
+3.2.0 (2020-02-21)
+------------------
+Django 2.2 support, maintaining Django 2.0 support
+
 3.1.0 (2019-04-27)
 ------------------
 Django 2.1 support, drops Django 1.11 (along with Python2.7) support
