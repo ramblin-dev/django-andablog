@@ -6,6 +6,10 @@ The easiest way to install Andablog is with pip; this will give you the latest v
 
     pip install django-andablog
 
+Unless you plan on turning off markdown rendering, you also need a package for that::
+
+    pip install Markdown
+    
 If you are adventurous (or we are just slow) you can get the latest code directly from the Github repository::
 
     pip install -e git+https://github.com/WimpyAnalytics/django-andablog.git#egg=django-andablog
@@ -142,6 +146,10 @@ At the moment Andablog does not provide any template examples or tags that displ
 
 There is a (no longer maintained) django-taggit-templatetags project and some (maintained) offshoots to consider. They
 weren't up to date enough to package within Andablog.
+
+Custom Blog Entry Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This project uses django-markupfield for rendering entry text to html. With that project you either need to have Markdown (the package) installed or you need to set `MARKUP_FIELD_TYPES <https://github.com/jamesturk/django-markupfield#settings>`_ to something custom.
 
 Package Dependencies
 --------------------
