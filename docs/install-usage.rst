@@ -149,7 +149,7 @@ weren't up to date enough to package within Andablog.
 
 Custom Blog Entry Rendering
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This project uses django-markupfield for rendering entry text to html. With that project you either need to have Markdown (the package) installed or you need to set `MARKUP_FIELD_TYPES <https://github.com/jamesturk/django-markupfield#settings>` to something custom.
+This project uses django-markupfield for rendering entry text to html. With that project you either need to have Markdown (the package) installed or you need to set `MARKUP_FIELD_TYPES <https://github.com/jamesturk/django-markupfield#settings>`_ to something custom.
 
 Package Dependencies
 --------------------
